@@ -2,6 +2,7 @@ import { NavLink } from 'react-router-dom';
 
 import React from 'react';
 import logo from '../../assets/logo.jpg';
+import ThemeToggler from '../ThemeToggler/ThemeToggler';
 
 /* eslint-disable jsx-a11y/anchor-is-valid */
 const Sidebar = () => (
@@ -11,19 +12,32 @@ const Sidebar = () => (
     <nav>
       <ul>
         <li className="nav-item">
-          <NavLink to="/" className="nav-link">Doctors</NavLink>
+          <NavLink to="/" className="nav-link">
+            Doctors
+          </NavLink>
         </li>
         <li className="nav-item">
-          <NavLink to="/book-appointment" className="nav-link">Reserve</NavLink>
+          <NavLink to="/book-appointment" className="nav-link">
+            Reserve
+          </NavLink>
         </li>
         <li className="nav-item">
-          <NavLink to="/my-appointments" className="nav-link">My appointments</NavLink>
+          <NavLink to="/my-appointments" className="nav-link">
+            My appointments
+          </NavLink>
         </li>
         <li className="nav-item">
-          <NavLink to="/add-doctor" className="nav-link">Add doctor</NavLink>
+          <NavLink to="/add-doctor" className="nav-link">
+            Add doctor
+          </NavLink>
         </li>
         <li className="nav-item">
-          <NavLink to="/remove-doctor" className="nav-link">Delete doctor</NavLink>
+          <NavLink to="/remove-doctor" className="nav-link">
+            Delete doctor
+          </NavLink>
+        </li>
+        <li className="nav-item">
+          <ThemeToggler />
         </li>
       </ul>
     </nav>
