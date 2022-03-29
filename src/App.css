@@ -5,3 +5,15 @@
 .App {
   text-align: center;
 }
+
+.nav-item {
+  @apply pl-4;
+}
+
+.nav-link {
+  @apply uppercase tracking-wide text-gray-900 py-3 px-4 w-full inline-block text-sm font-semibold;
+}
+
+.active {
+  @apply text-primaryContrast bg-primary;
+}
