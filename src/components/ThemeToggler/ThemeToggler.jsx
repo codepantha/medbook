@@ -10,7 +10,7 @@ const ThemeToggler = () => {
         <input
           type="checkbox"
           id="theme-toggler"
-          className="cursor-pointer h-8 w-16 rounded-full appearance-none bg-slate-500 checked:bg-blue-600 transition duration-300 ease-in-out relative"
+          className="cursor-pointer h-8 w-16 rounded-full appearance-none bg-slate-500 checked:bg-blue-600 transition duration-200 ease-in-out relative"
           onChange={toggleTheme}
         />
       </label>

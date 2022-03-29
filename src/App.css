@@ -6,31 +6,37 @@
   text-align: center;
 }
 
+/* dark theme styles */
+
+.theme-transition {
+  @apply transition duration-200 ease-in-out;
+}
+
+.dark-theme-bg {
+  @apply dark:bg-dark dark:text-darkContrast;
+}
+
 .nav-item {
   @apply pl-4;
 }
 
 .nav-link {
-  @apply uppercase tracking-wide text-gray-900 py-3 px-4 w-full inline-block text-sm font-semibold;
+  @apply uppercase tracking-wide text-gray-900 py-3 px-4 w-full inline-block text-sm font-semibold dark-theme-bg theme-transition;
 }
 
 .active {
-  @apply text-primaryContrast bg-primary;
+  @apply text-primaryContrast bg-primary dark:bg-primary dark:text-black;
 }
 
 #theme-toggler::after {
+  @apply h-8 w-8 rounded-full bg-gray-300 absolute left-0 top-0 transform scale-110 transition duration-300 ease-in-out flex justify-center items-center text-2xl text-black;
+
   font-family: 'Font Awesome 6 Free', sans-serif;
   content: '\f185';
-
-  @apply h-8 w-8 rounded-full bg-gray-300 absolute left-0 top-0 transform scale-110 transition duration-200 flex justify-center items-center text-2xl;
 }
 
 #theme-toggler:checked::after {
-  content: '\f186';
-
   @apply bg-gray-800 transform translate-x-8  text-primaryContrast;
-}
 
-.theme-transition {
-  @apply transition duration-200 ease-in-out;
+  content: '\f186';
 }

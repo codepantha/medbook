@@ -10,10 +10,7 @@ function App() {
   return (
     <main className="grid grid-cols-12 h-screen">
       <SideBar />
-      <div
-        div
-        className="col-span-10 min-h-full dark:bg-gray-500 dark:text-primaryContrast theme-transition"
-      >
+      <div div className="col-span-10 min-h-full dark-theme-bg theme-transition">
         <Routes>
           <Route path="/" element={<Doctors />} />
           <Route path="/book-appointment" element={<Book />} />
