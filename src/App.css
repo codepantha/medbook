@@ -17,3 +17,20 @@
 .active {
   @apply text-primaryContrast bg-primary;
 }
+
+#theme-toggler::after {
+  font-family: 'Font Awesome 6 Free', sans-serif;
+  content: '\f185';
+
+  @apply h-8 w-8 rounded-full bg-gray-300 absolute left-0 top-0 transform scale-110 transition duration-200 flex justify-center items-center text-2xl;
+}
+
+#theme-toggler:checked::after {
+  content: '\f186';
+
+  @apply bg-gray-800 transform translate-x-8  text-primaryContrast;
+}
+
+.theme-transition {
+  @apply transition duration-200 ease-in-out;
+}

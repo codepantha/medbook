@@ -1,15 +1,21 @@
 /* eslint-disable */
-import React from 'react';
-
-const ThemeToggler = () => (
-  <div className="form-check form-switch mb-7 flex justify-center">
-    <input
-      className="form-check-input appearance-none w-9 -ml-10 rounded-full bfloat-left h-5 align-top  bg-no-repeat bg-contain bg-gray-300 focus:outline-none cursor-pointer shadow-sm"
-      type="checkbox"
-      role="switch"
-      id="flexSwitchCheckDefault56"
-    />
-  </div>
-);
+const ThemeToggler = () => {
+  const toggleTheme = () => {
+    document.getElementsByTagName('html')[0].classList.toggle('dark');
+    console.log('dark');
+  };
+  return (
+    <div className="form-check form-switch mt-7 ml-2">
+      <label htmlFor="theme-toggler">
+        <input
+          type="checkbox"
+          id="theme-toggler"
+          className="cursor-pointer h-8 w-16 rounded-full appearance-none bg-slate-500 checked:bg-blue-600 transition duration-300 ease-in-out relative"
+          onChange={toggleTheme}
+        />
+      </label>
+    </div>
+  );
+};
 
 export default ThemeToggler;
