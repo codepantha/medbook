@@ -1,8 +1,6 @@
-/* eslint-disable */
 const ThemeToggler = () => {
   const toggleTheme = () => {
     document.getElementsByTagName('html')[0].classList.toggle('dark');
-    console.log('dark');
   };
   return (
     <div className="form-check form-switch mt-7 ml-2">

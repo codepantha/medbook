@@ -40,3 +40,23 @@
 
   content: '\f186';
 }
+
+.bar {
+  @apply w-full h-1 bg-dark dark:bg-white rounded-full transition duration-200 ease-in pointer-events-none;
+}
+
+.opened {
+  @apply justify-center;
+}
+
+.opened .bar:nth-child(1) {
+  @apply transform absolute rotate-45;
+}
+
+.opened .bar:nth-child(2) {
+  @apply hidden;
+}
+
+.opened .bar:nth-child(3) {
+  @apply transform absolute -rotate-45;
+}

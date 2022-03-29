@@ -1,13 +1,17 @@
 import { NavLink } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
-import React from 'react';
 import logo from '../../assets/logo.jpg';
 import darkLogo from '../../assets/logo_ccexpress.png';
 import ThemeToggler from '../ThemeToggler/ThemeToggler';
 
-/* eslint-disable jsx-a11y/anchor-is-valid */
-const Sidebar = () => (
-  <div className="bg-white col-span-2 shadow-lg dark:border-r dark:border-gray-800 dark-theme-bg theme-transition">
+const Sidebar = ({ menuOpened }) => (
+  <div
+    className={`bg-white shadow-lg dark:border-r dark:border-gray-800 dark-theme-bg theme-transition col-span-12  ${
+      menuOpened ? 'hidden' : ''
+    } md:col-span-2 md:block`}
+    id="sideMenu"
+  >
     <img
       src={logo}
       alt="logo"
@@ -54,4 +58,7 @@ const Sidebar = () => (
   </div>
 );
 
+Sidebar.propTypes = {
+  menuOpened: PropTypes.bool.isRequired,
+};
 export default Sidebar;
