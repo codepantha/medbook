@@ -5,3 +5,64 @@
 .App {
   text-align: center;
 }
+
+/* dark theme styles */
+
+.theme-transition {
+  @apply transition duration-200 ease-in-out;
+}
+
+.dark-theme-bg {
+  @apply dark:bg-dark dark:text-darkContrast;
+}
+
+.nav-item {
+  @apply pl-4;
+}
+
+.nav-link {
+  @apply uppercase tracking-wide text-gray-900 py-3 px-4 w-full inline-block text-sm font-semibold dark-theme-bg theme-transition;
+}
+
+.active {
+  @apply text-primaryContrast bg-primary dark:bg-primary dark:text-black;
+}
+
+#theme-toggler::after {
+  @apply h-8 w-8 rounded-full bg-gray-300 absolute left-0 top-0 transform scale-110 transition duration-300 ease-in-out flex justify-center items-center text-2xl text-black;
+
+  font-family: 'Font Awesome 6 Free', sans-serif;
+  content: '\f185';
+}
+
+#theme-toggler:checked::after {
+  @apply bg-gray-800 transform translate-x-8  text-primaryContrast;
+
+  content: '\f186';
+}
+
+.bar {
+  @apply w-full h-1 bg-dark dark:bg-white rounded-full transition duration-200 ease-in pointer-events-none;
+}
+
+.opened {
+  @apply justify-center;
+}
+
+.opened .bar:nth-child(1) {
+  @apply transform absolute rotate-45;
+}
+
+.opened .bar:nth-child(2) {
+  @apply hidden;
+}
+
+.opened .bar:nth-child(3) {
+  @apply transform absolute -rotate-45;
+}
+
+@media screen and (min-width: 768px) {
+  .sidebar {
+    position: static;
+  }
+}
