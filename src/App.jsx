@@ -19,6 +19,14 @@ function App() {
     }
   }, [menuOpened]);
 
+  // initial theme state from local storage
+  useEffect(() => {
+    const localTheme = localStorage.getItem('theme');
+    if (localTheme) {
+      document.getElementsByTagName('html')[0].classList.add(localTheme);
+    }
+  }, []);
+
   const handleMenu = () => {
     if (window.innerWidth < 768) setMenuOpened((prev) => !prev);
   };
