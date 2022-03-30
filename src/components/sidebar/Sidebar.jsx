@@ -5,10 +5,12 @@ import logo from '../../assets/logo.jpg';
 import darkLogo from '../../assets/logo_ccexpress.png';
 import ThemeToggler from '../ThemeToggler/ThemeToggler';
 
-const Sidebar = ({ menuOpened }) => (
+const Sidebar = ({ menuOpened, setMenuOpened }) => (
   <div
-    className={`bg-white shadow-lg dark:border-r dark:border-gray-800 dark-theme-bg theme-transition col-span-12  ${
-      menuOpened ? 'hidden' : ''
+    className={`bg-white shadow-lg dark:border-r dark:border-gray-800 dark-theme-bg theme-transition col-span-12  transition duration-200 absolute sidebar ${
+      menuOpened
+        ? 'transform translate-x-0 h-screen w-screen'
+        : 'transform -translate-x-full md:translate-x-0'
     } md:col-span-2 md:block`}
     id="sideMenu"
   >
@@ -26,27 +28,57 @@ const Sidebar = ({ menuOpened }) => (
     <nav>
       <ul>
         <li className="nav-item">
-          <NavLink to="/" className="nav-link">
+          <NavLink
+            to="/"
+            className="nav-link"
+            onClick={() => {
+              setMenuOpened();
+            }}
+          >
             Doctors
           </NavLink>
         </li>
         <li className="nav-item">
-          <NavLink to="/book-appointment" className="nav-link">
+          <NavLink
+            to="/book-appointment"
+            className="nav-link"
+            onClick={() => {
+              setMenuOpened();
+            }}
+          >
             Reserve
           </NavLink>
         </li>
         <li className="nav-item">
-          <NavLink to="/my-appointments" className="nav-link">
+          <NavLink
+            to="/my-appointments"
+            className="nav-link"
+            onClick={() => {
+              setMenuOpened();
+            }}
+          >
             My appointments
           </NavLink>
         </li>
         <li className="nav-item">
-          <NavLink to="/add-doctor" className="nav-link">
+          <NavLink
+            to="/add-doctor"
+            className="nav-link"
+            onClick={() => {
+              setMenuOpened();
+            }}
+          >
             Add doctor
           </NavLink>
         </li>
         <li className="nav-item">
-          <NavLink to="/remove-doctor" className="nav-link">
+          <NavLink
+            to="/remove-doctor"
+            className="nav-link"
+            onClick={() => {
+              setMenuOpened();
+            }}
+          >
             Delete doctor
           </NavLink>
         </li>
@@ -60,5 +92,6 @@ const Sidebar = ({ menuOpened }) => (
 
 Sidebar.propTypes = {
   menuOpened: PropTypes.bool.isRequired,
+  setMenuOpened: PropTypes.func.isRequired,
 };
 export default Sidebar;
