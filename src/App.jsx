@@ -7,6 +7,7 @@ import Appointments from './pages/Appointments/Appointments';
 import AddDoctor from './pages/AddDoctor/AddDoctor';
 import SideBar from './components/sidebar/Sidebar';
 import HamburgerIcon from './components/HamburgerIcon/HamburgerIcon';
+import DetailPage from './components/DetailPage/DetailPage';
 
 function App() {
   const [menuOpened, setMenuOpened] = useState(false);
@@ -45,6 +46,7 @@ function App() {
             <Route path="/book-appointment" element={<Book />} />
             <Route path="/my-appointments" element={<Appointments />} />
             <Route path="/add-doctor" element={<AddDoctor />} />
+            <Route path="/detail-page" element={<DetailPage />} />
           </Routes>
         </section>
       </main>

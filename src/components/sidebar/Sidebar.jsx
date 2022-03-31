@@ -1,6 +1,5 @@
 import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
-
 import logo from '../../assets/logo.jpg';
 import darkLogo from '../../assets/logo_ccexpress.png';
 import ThemeToggler from '../ThemeToggler/ThemeToggler';
@@ -84,6 +83,17 @@ const Sidebar = ({ menuOpened, setMenuOpened }) => (
         </li>
         <li className="nav-item">
           <ThemeToggler />
+        </li>
+        <li className="nav-item">
+          <NavLink
+            to="/detail-page"
+            onClick={() => {
+              setMenuOpened();
+            }}
+          /* eslint-disable-next-line */
+          >
+          Detail Pages
+          </NavLink>
         </li>
       </ul>
     </nav>
