@@ -1,6 +1,5 @@
 import React from 'react';
 import MeredithGrey from '../../assets/doctors/MeredithGrey.jpeg';
-// import PropTypes from 'prop-types';
 
 const DetailPage = () => (
   <>
@@ -39,7 +38,9 @@ const DetailPage = () => (
       </aside>
     </main>
     <footer>
-      <button type="button" className="bg-primary hover:bg-lime-400 font-bold text-3xl text-slate-50 pl-10 p-2  pr-3 rounded-r-full">&#60;</button>
+      <svg xmlns="http://www.w3.org/2000/svg" className="h-12 bg-primary hover:bg-lime-400 font-bold text-3xl text-slate-50 pl-10 p-2  pr-3 rounded-r-full" viewBox="0 0 20 20" fill="white">
+        <path fillRule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clipRule="evenodd" />
+      </svg>
     </footer>
   </>
 );

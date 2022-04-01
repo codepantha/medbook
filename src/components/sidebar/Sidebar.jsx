@@ -87,9 +87,6 @@ const Sidebar = ({ menuOpened, setMenuOpened }) => (
         <li className="nav-item">
           <NavLink
             to="/detail-page"
-            onClick={() => {
-              setMenuOpened();
-            }}
           /* eslint-disable-next-line */
           >
           Detail Pages
