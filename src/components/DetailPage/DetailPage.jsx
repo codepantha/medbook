@@ -33,13 +33,13 @@ const DetailPage = () => (
           Grey, a famed general surgeon, and the now-deceased Thatcher Grey.
         </p>
         <div className="flex justify-between">
-          <button type="button" className="bg-primary p-4 rounded-full text-slate-50">Appointment</button>
-          <button type="button" className="bg-red-600 p-4 rounded-full text-slate-50">Delete</button>
+          <button type="button" className="bg-primary hover:bg-lime-400 p-4 rounded-full text-slate-50">Appointment</button>
+          <button type="button" className="bg-red-600 hover:bg-red-400 p-4 rounded-full text-slate-50">Delete</button>
         </div>
       </aside>
     </main>
     <footer>
-      <button type="button" className="bg-primary font-bold text-3xl text-slate-50 pl-10 p-2  pr-3 rounded-r-full">&#60;</button>
+      <button type="button" className="bg-primary hover:bg-lime-400 font-bold text-3xl text-slate-50 pl-10 p-2  pr-3 rounded-r-full">&#60;</button>
     </footer>
   </>
 );
