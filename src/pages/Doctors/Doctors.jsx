@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 import { fetchD } from '../../redux/thunk/api';
+import DoctorCard from './DoctorCard';
 
 const Doctor = () => {
   const doctor = useSelector((state) => state.doctor);
@@ -13,7 +14,7 @@ const Doctor = () => {
 
   return (
     <>
-      <div>{console.log('UI rendered', { doctor })}</div>
+      <div><DoctorCard doctor={doctor} /></div>
     </>
   );
 };
