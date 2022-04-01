@@ -40,7 +40,7 @@ function App() {
       </header>
       <main className="grid grid-cols-12 h-screen">
         <SideBar menuOpened={menuOpened} setMenuOpened={handleMenu} />
-        <section className="col-span-12  pt-20 px-4 dark-theme-bg theme-transition md:col-span-10 md:p-4 h-screen">
+        <section className="col-span-12 dark-theme-bg theme-transition md:col-span-10 md:p-4 h-screen">
           <Routes>
             <Route path="/" element={<Doctors />} />
             <Route path="/book-appointment" element={<Book />} />
