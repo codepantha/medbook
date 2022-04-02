@@ -5,7 +5,11 @@ const DetailPage = () => (
   <>
     <main className="flex h-5/6 justify-center gap-x-20 pt-20">
       <div>
-        <img src={MeredithGrey} alt="Dr. Grey" className="rounded-3xl border-4 border-zinc-600 " />
+        <img
+          src={MeredithGrey}
+          alt="Dr. Grey"
+          className="rounded-3xl border-4 border-zinc-600 dark:border-neutral-300"
+        />
       </div>
       <aside className="w-3/12 flex flex-col gap-y-5">
         <div>
