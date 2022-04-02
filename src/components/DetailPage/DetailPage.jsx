@@ -5,7 +5,7 @@ const DetailPage = () => (
   <>
     <main className="flex h-5/6 justify-center gap-x-20 pt-20">
       <div>
-        <img src={MeredithGrey} alt="Dr. Grey" className="rounded-3xl border-4 border-zinc-600" />
+        <img src={MeredithGrey} alt="Dr. Grey" className="rounded-3xl border-4 border-zinc-600 " />
       </div>
       <aside className="w-3/12 flex flex-col gap-y-5">
         <div>
@@ -13,15 +13,15 @@ const DetailPage = () => (
           <p className="text-lg text-right">General Surgeon</p>
         </div>
         <ul>
-          <li className="flex justify-between bg-gray-300 p-2">
+          <li className="flex justify-between bg-gray-300 dark:bg-gray-800 p-2">
             <p>Consultation Fee:</p>
             <p>$50</p>
           </li>
-          <li className="flex justify-between bg-neutral-100 p-2">
+          <li className="flex justify-between bg-neutral-100 dark:bg-gray-600 p-2">
             <p>Experience:</p>
             <p>20 years</p>
           </li>
-          <li className="flex justify-between bg-gray-300 p-2">
+          <li className="flex justify-between bg-gray-300  dark:bg-gray-800 p-2">
             <p>Age:</p>
             <p>45 years</p>
           </li>
