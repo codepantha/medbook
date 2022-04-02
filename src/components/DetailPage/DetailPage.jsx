@@ -3,7 +3,7 @@ import MeredithGrey from '../../assets/doctors/MeredithGrey.jpeg';
 
 const DetailPage = () => (
   <>
-    <main className="flex h-5/6 justify-center gap-x-20 pt-20">
+    <main className="flex flex-col bg-inherit md:h-5/6 md:justify-center gap-x-20 pt-20 pb-5 md:pb-0 md:flex-row px-4 md:px-0">
       <div>
         <img
           src={MeredithGrey}
@@ -11,10 +11,10 @@ const DetailPage = () => (
           className="rounded-3xl border-4 border-zinc-600 dark:border-neutral-300"
         />
       </div>
-      <aside className="w-3/12 flex flex-col gap-y-5">
-        <div>
-          <p className="text-3xl font-bold text-right">Dr. Meredith Grey</p>
-          <p className="text-lg text-right">General Surgeon</p>
+      <aside className="md:w-3/12 flex flex-col gap-y-5">
+        <div className="md:block flex flex-col gap-y-3 pt-3">
+          <p className="text-3xl font-bold md:text-right text-center">Dr. Meredith Grey</p>
+          <p className="text-lg md:text-right text-center">General Surgeon</p>
         </div>
         <ul>
           <li className="flex justify-between bg-gray-300 dark:bg-gray-800 p-2">
