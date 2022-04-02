@@ -54,7 +54,11 @@ const DetailPage = () => (
     <footer>
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        className="h-12 bg-primary hover:bg-lime-400 font-bold text-3xl text-slate-50 pl-10 p-2  pr-3 rounded-r-full cursor-pointer"
+        className="h-12 bg-primary hover:bg-lime-400 font-bold text-3xl
+        text-slate-50 pl-10 p-2  pr-3 rounded-r-full cursor-pointer
+        absolute top-0 left-0 mt-4
+        md:static
+        "
         viewBox="0 0 20 20"
         fill="white"
       >
