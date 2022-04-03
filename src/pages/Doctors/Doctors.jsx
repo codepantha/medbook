@@ -14,7 +14,8 @@ const Doctor = () => {
 
   return (
     <>
-      <div><DoctorCard doctor={doctor} /></div>
+      <h1>Available Doctors:</h1>
+      <div className="test"><DoctorCard doctor={doctor} /></div>
     </>
   );
 };
