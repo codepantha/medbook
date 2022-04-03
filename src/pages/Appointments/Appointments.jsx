@@ -8,11 +8,13 @@ const Appointment = () => {
 
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(fetchAp(2));
+    dispatch(fetchAp(1));
   }, [dispatch]);
+
+  const appointments = appointment.data;
   return (
     <>
-      <div>{console.log('From the UI', appointment)}</div>
+      <div>{appointments && appointments.map((app) => <h1 key={app.id}>{app.city}</h1>)}</div>
     </>
   );
 };

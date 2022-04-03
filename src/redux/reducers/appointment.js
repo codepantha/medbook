@@ -1,5 +1,3 @@
-/* eslint-disable no-case-declarations */
-import _ from 'lodash';
 import {
   FETCH_APPOINTMENT_SUCCESS,
   FETCH_APPOINTMENT_FAILURE,
@@ -13,11 +11,7 @@ const appointmentReducer = (state = initialState, { type, payload }) => {
       return state;
 
     case FETCH_APPOINTMENT_SUCCESS:
-      const newState = _.filter(
-        state,
-        (appointments) => appointments.All.user === payload,
-      );
-      return newState;
+      return payload;
 
     default:
       return state;
