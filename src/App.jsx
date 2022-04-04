@@ -7,6 +7,7 @@ import Appointments from './pages/Appointments/Appointments';
 import AddDoctor from './pages/AddDoctor/AddDoctor';
 import SideBar from './components/sidebar/Sidebar';
 import HamburgerIcon from './components/HamburgerIcon/HamburgerIcon';
+import DetailPage from './components/DetailPage/DetailPage';
 
 function App() {
   const [menuOpened, setMenuOpened] = useState(false);
@@ -39,12 +40,13 @@ function App() {
       </header>
       <main className="grid grid-cols-12 h-screen">
         <SideBar menuOpened={menuOpened} setMenuOpened={handleMenu} />
-        <section className="col-span-12  pt-20 px-4 dark-theme-bg theme-transition md:col-span-10 md:p-4 h-screen">
+        <section className="col-span-12 dark-theme-bg theme-transition md:col-span-10 h-screen">
           <Routes>
             <Route path="/" element={<Doctors />} />
             <Route path="/book-appointment" element={<Book />} />
             <Route path="/my-appointments" element={<Appointments />} />
             <Route path="/add-doctor" element={<AddDoctor />} />
+            <Route path="/detail-page" element={<DetailPage />} />
           </Routes>
         </section>
       </main>

@@ -1,16 +1,13 @@
 import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
-
 import logo from '../../assets/logo.jpg';
 import darkLogo from '../../assets/logo_ccexpress.png';
 import ThemeToggler from '../ThemeToggler/ThemeToggler';
 
 const Sidebar = ({ menuOpened, setMenuOpened }) => (
   <div
-    className={`bg-white shadow-lg dark:border-r dark:border-gray-800 dark-theme-bg theme-transition col-span-12  transition duration-200 absolute sidebar ${
-      menuOpened
-        ? 'transform translate-x-0 h-screen w-screen'
-        : 'transform -translate-x-full md:translate-x-0'
+    className={`bg-white shadow-lg dark:border-r dark:border-gray-800 dark-theme-bg theme-transition col-span-12  transition duration-200 absolute sidebar w-screen md:w-full md:translate-x-0 z-40 ${
+      menuOpened ? 'transform translate-x-0 h-screen ' : 'transform translate-x-full '
     } md:col-span-2 md:block`}
     id="sideMenu"
   >
@@ -84,6 +81,14 @@ const Sidebar = ({ menuOpened, setMenuOpened }) => (
         </li>
         <li className="nav-item">
           <ThemeToggler />
+        </li>
+        <li className="nav-item">
+          <NavLink
+            to="/detail-page"
+            /* eslint-disable-next-line */
+          >
+            Detail Pages
+          </NavLink>
         </li>
       </ul>
     </nav>
