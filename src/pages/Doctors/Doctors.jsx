@@ -14,7 +14,7 @@ const Doctor = () => {
 
   return (
     <>
-      <h1>Available Doctors:</h1>
+      <h1 className="text-center text-bold text-2xl font-bold m-5">Available Doctors:</h1>
       <div><DoctorCard doctor={doctor} /></div>
     </>
   );

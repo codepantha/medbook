@@ -16,6 +16,9 @@ const Appointment = () => {
   return (
     <>
       <div className="appointment-wrapper">
+        <div className="appointment-title-holder">
+          <h1 className="text-center text-bold text-2xl font-bold m-5">List of my appointments:</h1>
+        </div>
         <AppointmentCard appointments={appointments} />
       </div>
     </>
