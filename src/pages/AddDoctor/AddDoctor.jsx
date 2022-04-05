@@ -30,6 +30,10 @@ const AddDoctor = () => {
     setInputs({ ...inputs, [e.target.name]: e.target.value });
   };
 
+  const resetFields = () => {
+    setInputs(defaultInput);
+  };
+
   const processErrorResponse = (errorRes) => {
     const errors = [];
     let newError = '';
@@ -64,6 +68,7 @@ const AddDoctor = () => {
       if (res.status === 201) {
         setSuccess('Doctor created successfully!');
         setErrors([]);
+        resetFields();
       } else {
         setErrors(processErrorResponse(data));
         setSuccess(null);
