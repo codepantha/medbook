@@ -44,6 +44,17 @@ const AddDoctor = () => {
     return errors;
   };
 
+  const setSuccessOrErrorStates = (res, data) => {
+    if (res.status === 201) {
+      setSuccess('Doctor created successfully!');
+      setErrors([]);
+      resetFields();
+    } else {
+      setErrors(processErrorResponse(data));
+      setSuccess(null);
+    }
+  };
+
   const addADoctor = async () => {
     try {
       const res = await fetch('http://127.0.0.1:3000/api/v1/doctors', {
@@ -64,15 +75,7 @@ const AddDoctor = () => {
       });
 
       const data = await res.json();
-
-      if (res.status === 201) {
-        setSuccess('Doctor created successfully!');
-        setErrors([]);
-        resetFields();
-      } else {
-        setErrors(processErrorResponse(data));
-        setSuccess(null);
-      }
+      setSuccessOrErrorStates(res, data);
     } catch (error) {
       setErrors(error);
     }
@@ -108,6 +111,7 @@ const AddDoctor = () => {
               name="name"
               placeholder="Dr. Burke"
               value={name}
+              required
               className="input-field"
               onChange={handleChange}
             />
