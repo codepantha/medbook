@@ -1,3 +1,4 @@
+/* eslint-disable react/self-closing-comp */
 /* eslint-disable arrow-body-style */
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
@@ -15,7 +16,14 @@ const Doctor = () => {
   return (
     <>
       <h1 className="text-center text-bold text-2xl font-bold m-5">Available Doctors:</h1>
-      <div><DoctorCard doctor={doctor} /></div>
+      <div>
+        <div className="card-holder">
+          <DoctorCard doctor={doctor} />
+        </div>
+        <div className="button-class flex justify-between inset-y-0">
+
+        </div>
+      </div>
     </>
   );
 };
