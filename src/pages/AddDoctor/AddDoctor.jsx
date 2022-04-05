@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
+import Input from '../../components/Input/Input';
 
 const defaultInput = {
   name: '',
@@ -17,13 +18,7 @@ const AddDoctor = () => {
   const [success, setSuccess] = useState(null);
 
   const {
-    name,
-    specialty,
-    bio,
-    dob,
-    experience,
-    profilePic,
-    consultation,
+    name, specialty, bio, dob, experience, profilePic, consultation,
   } = inputs;
 
   const handleChange = (e) => {
@@ -98,97 +93,92 @@ const AddDoctor = () => {
             Add a Doctor
           </h2>
 
-          {errors.length ? errors.map((error) => (
-            <p key={uuidv4()} className="text-sm text-red-800 font-medium">{error}</p>
-          )) : ''}
+          {errors.length
+            ? errors.map((error) => (
+              <p key={uuidv4()} className="text-sm text-red-800 font-medium">
+                {error}
+              </p>
+            ))
+            : ''}
 
-          {success && <p className="text-sm text-green-800 font-medium">{success}</p>}
+          {success && (
+            <p className="text-sm text-green-800 font-medium">{success}</p>
+          )}
 
           <div className="w-full mb-4">
             <span className="label">Name</span>
-            <input
+            <Input
               type="text"
               name="name"
               placeholder="Dr. Burke"
               value={name}
-              required
-              className="input-field"
-              onChange={handleChange}
+              handleChange={handleChange}
             />
           </div>
           <div className="w-full mb-4">
             <span className="label">Specialty</span>
-            <input
+            <Input
               type="text"
               name="specialty"
               placeholder="Cardio-thoracic surgery"
               value={specialty}
-              required
-              className="input-field"
-              onChange={handleChange}
+              handleChange={handleChange}
             />
           </div>
           <div className="w-full mb-4">
             <span className="label">Date of birth</span>
-            <input
+            <Input
               type="date"
               name="dob"
               placeholder="1890-04-08"
-              className="input-field"
-              required
               value={dob}
-              onChange={handleChange}
+              handleChange={handleChange}
             />
           </div>
           <div className="w-full mb-4">
             <span className="label">Bio</span>
-            <input
+            <Input
               type="text"
               name="bio"
               placeholder="tell us a bit about you"
               value={bio}
-              required
-              className="input-field"
-              onChange={handleChange}
+              handleChange={handleChange}
             />
           </div>
           <div className="w-full mb-4">
             <span className="label">Years of experience</span>
-            <input
+            <Input
               type="number"
               name="experience"
               placeholder="1"
               value={experience}
-              required
-              className="input-field"
-              onChange={handleChange}
+              handleChange={handleChange}
             />
           </div>
           <div className="w-full mb-4">
             <span className="label">Profile picture</span>
-            <input
+            <Input
               type="text"
               name="profilePic"
               placeholder="https://link-to-your-dp.jpg"
               value={profilePic}
-              required
-              className="input-field"
-              onChange={handleChange}
+              handleChange={handleChange}
             />
           </div>
           <div className="w-full mb-4">
             <span className="label">Consultation fee</span>
-            <input
+            <Input
               type="text"
               name="consultation"
               placeholder="$100"
               value={consultation}
-              required
-              className="input-field"
-              onChange={handleChange}
+              handleChange={handleChange}
             />
           </div>
-          <button type="submit" className="self-start py-4 px-4 bg-primary text-sm uppercase rounded-md shadow-md text-primaryContrast">
+          <button
+            type="submit"
+            className="self-start py-4 px-4 bg-primary text-sm uppercase rounded-md shadow-md text-primaryContrast"
+          >
             Add doctor
           </button>
         </form>
