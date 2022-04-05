@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
+import { useNavigate } from 'react-router-dom';
 import Input from '../../components/Input/Input';
 
 const defaultInput = {
@@ -16,6 +17,7 @@ const AddDoctor = () => {
   const [inputs, setInputs] = useState(defaultInput);
   const [errors, setErrors] = useState([]);
   const [success, setSuccess] = useState(null);
+  const navigate = useNavigate();
 
   const {
     name, specialty, bio, dob, experience, profilePic, consultation,
@@ -44,6 +46,7 @@ const AddDoctor = () => {
       setSuccess('Doctor created successfully!');
       setErrors([]);
       resetFields();
+      setTimeout(() => navigate('/'), 1000);
     } else {
       setErrors(processErrorResponse(data));
       setSuccess(null);
@@ -82,7 +85,7 @@ const AddDoctor = () => {
   };
 
   return (
-    <section className="w-full flex justify-center items-center min-h-screen md:h-full bg-slate-400">
+    <section className="w-full flex justify-center items-center min-h-screen md:h-full bg-slate-200 dark:bg-slate-700">
       <div className="w-5/6 md:w-2/5 h-full md:h-3/4 md:overflow-scroll py-4 px-6 bg-white border-2 border-t-darkContrast shadow-lg">
         <form
           onSubmit={handleSubmit}
