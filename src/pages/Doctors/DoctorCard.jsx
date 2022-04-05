@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/control-has-associated-label */
 /* eslint-disable react/self-closing-comp */
 /* eslint-disable react/jsx-one-expression-per-line */
 /* eslint-disable react/forbid-prop-types */
@@ -27,9 +28,9 @@ function DoctorCard({ doctor }) {
               </div>
             </div>
             <div className="px-6 pt-4 pb-2">
-              <span className="cursor-pointer inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"><FaFacebookF size={20} /></span>
-              <span className="cursor-pointer inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"><FaTwitter size={20} /></span>
-              <span className="cursor-pointer inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"><FaLinkedinIn size={20} /></span>
+              <button type="button" href="https://twitter.com/" className="cursor-pointer inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"><FaFacebookF size={20} /></button>
+              <button type="button" href="https://twitter.com/" className="cursor-pointer inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"><FaTwitter size={20} /></button>
+              <button type="button" href="https://twitter.com/" className="cursor-pointer inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"><FaLinkedinIn size={20} /></button>
             </div>
           </div>
         ))}
