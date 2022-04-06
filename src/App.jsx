@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import './App.css';
 import { useEffect, useState } from 'react';
 import Doctors from './pages/Doctors/Doctors';
@@ -11,6 +11,7 @@ import DetailPage from './components/DetailPage/DetailPage';
 
 function App() {
   const [menuOpened, setMenuOpened] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     if (menuOpened && window.innerWidth < 768) {
@@ -43,10 +44,10 @@ function App() {
         <section className="col-span-12 dark-theme-bg theme-transition md:col-span-10 h-screen">
           <Routes>
             <Route path="/" element={<Doctors />} />
+            <Route path="/doctor-details/:id" element={<DetailPage data={location.state} />} />
             <Route path="/book-appointment" element={<Book />} />
             <Route path="/my-appointments" element={<Appointments />} />
             <Route path="/add-doctor" element={<AddDoctor />} />
-            <Route path="/detail-page" element={<DetailPage />} />
           </Routes>
         </section>
       </main>
