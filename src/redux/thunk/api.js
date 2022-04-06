@@ -6,6 +6,7 @@ import {
   fetchDoctorFailure,
   fetchAppointmentFailure,
   fetchAppointmentSuccess,
+  bookAppointment,
 } from '../actions/action';
 
 const baseURL = 'http://127.0.0.1:3000/api/v1/doctors';
@@ -32,4 +33,21 @@ export const fetchAp = (id) => (dispatch) => {
     .catch((err) => {
       dispatch(fetchAppointmentFailure(err.message));
     });
+};
+
+export const addAppointment = (booking_date, city, user_id, doctor_id) => {
+  const apiURL = `http://127.0.0.1:3000/api/v1/users/${user_id}/appointments`;
+  return (dispatch) => {
+    axios.post(apiURL, {
+      appointment_date: booking_date,
+      city,
+      user_id,
+      doctor_id,
+    })
+      .then((response) => {
+        if (response.status === 201) {
+          dispatch(bookAppointment({ booking_date, city, user_id, doctor_id }));
+        }
+      });
+  };
 };
