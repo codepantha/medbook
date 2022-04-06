@@ -1,9 +1,12 @@
 import {
   FETCH_APPOINTMENT_SUCCESS,
   FETCH_APPOINTMENT_FAILURE,
+  BOOK_NEW_APPOINTMENT,
 } from '../actions/action';
 
-const initialState = [];
+const initialState = {
+  appointments: [],
+};
 
 const appointmentReducer = (state = initialState, { type, payload }) => {
   switch (type) {
@@ -11,7 +14,16 @@ const appointmentReducer = (state = initialState, { type, payload }) => {
       return state;
 
     case FETCH_APPOINTMENT_SUCCESS:
-      return payload;
+      return {
+        ...state,
+        appointments: payload,
+      };
+
+    case BOOK_NEW_APPOINTMENT:
+      return {
+        ...state,
+        appointments: [...state.appointments, payload],
+      };
 
     default:
       return state;
