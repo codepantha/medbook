@@ -66,3 +66,11 @@
     position: static;
   }
 }
+
+.label {
+  @apply block text-gray-600 font-medium text-lg mb-2;
+}
+
+.input-field {
+  @apply w-full p-4 rounded shadow-sm border border-gray-200 outline-none;
+}
