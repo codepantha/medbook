@@ -4,6 +4,7 @@
 /* eslint-disable react/forbid-prop-types */
 import React from 'react';
 import PropTypes from 'prop-types';
+import { NavLink } from 'react-router-dom';
 import { FaTwitter, FaFacebookF, FaLinkedinIn } from 'react-icons/fa';
 
 import logo from '../../assets/logo.jpg';
@@ -17,9 +18,23 @@ function DoctorCard({ doctor }) {
             key={doc.id}
             className=" text-center max-w-sm overflow-hidden "
           >
-            <div className="rounded rounded-full pt-4 carousel-item relative float-left w-full">
-              <img src={logo} alt="doc" className="rounded-full object-contain h-28 w-28 ml-24" />
-            </div>
+            <NavLink
+              to={`doctor-details/${doc.id}`}
+              state={{
+                id: doc.id,
+                name: doc.name,
+                image: doc.profile_pic,
+                specialty: doc.specialty,
+                age: doc.age,
+                bio: doc.bio,
+                experience: doc.experience,
+                fee: doc.consultation_fee,
+              }}
+            >
+              <div className="rounded rounded-full pt-4 carousel-item relative float-left w-full">
+                <img src={logo} alt="doc" className="rounded-full object-contain h-28 w-28 ml-24" />
+              </div>
+            </NavLink>
             <div className="">
               <h1 className="font-bold text-xl mb-2">{doc.name}</h1>
               <h1 className="overline p-3 font-bold text-xl mb-2">Experience: {doc.experience} years</h1>
