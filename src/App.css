@@ -72,5 +72,5 @@
 }
 
 .input-field {
-  @apply w-full p-4 rounded shadow-sm border border-gray-200 outline-none
+  @apply w-full p-4 rounded shadow-sm border border-gray-200 outline-none;
 }

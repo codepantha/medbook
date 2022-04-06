@@ -19,8 +19,6 @@ const AddDoctor = () => {
   const [success, setSuccess] = useState(null);
   const navigate = useNavigate();
 
-  const navigate = useNavigate();
-
   const {
     name, specialty, bio, dob, experience, profilePic, consultation,
   } = inputs;
