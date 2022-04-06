@@ -6,15 +6,12 @@ import 'react-datepicker/dist/react-datepicker.css';
 
 const submitAppointmentToStore = (e, dispatch, startDate) => {
   e.preventDefault();
-  const doctorId = parseInt(document.getElementById('doctors').value, 10);
-  const userId = 1;
   const newAppointment = {
-    doctor_id: doctorId,
+    doctorId: parseInt(document.getElementById('doctors').value, 10),
     bookingDate: startDate,
     city: document.getElementById('city').value,
-    user_id: userId,
+    userId: 1,
   };
-  console.log(newAppointment);
   dispatch(addAppointment(newAppointment));
 };
 
@@ -57,10 +54,6 @@ const Reserve = () => {
           type="submit"
           value="Appointment"
           className="bg-primary hover:bg-lime-400 p-4 rounded-full text-slate-50 cursor-pointer"
-          onClick={() => {
-            console.log(startDate.toISOString().split('T')[0]);
-            console.log(document.getElementById('doctors').value);
-          }}
         />
       </form>
     </main>

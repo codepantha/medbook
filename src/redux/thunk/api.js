@@ -38,11 +38,7 @@ export const fetchAp = (id) => (dispatch) => {
 export const addAppointment = ({
   doctorId, bookingDate, city, userId,
 }) => {
-  console.log(doctorId);
-  console.log(bookingDate);
-  console.log(city);
-  console.log(userId);
-  const apiURL = 'http://127.0.0.1:3000/api/v1/users/4/appointments';
+  const apiURL = `http://127.0.0.1:3000/api/v1/users/${userId}/appointments`;
   return (dispatch) => {
     axios.post(apiURL, {
       doctor_id: doctorId,
@@ -52,8 +48,6 @@ export const addAppointment = ({
       'Content-Type': 'application/json',
     })
       .then((response) => {
-        console.log('Pumas');
-        console.log(response);
         if (response.status === 'Success') {
           dispatch(bookAppointment({
             doctorId, bookingDate, city,
