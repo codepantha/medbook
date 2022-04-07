@@ -3,6 +3,7 @@ export const FETCH_DOCTOR_FAILURE = 'FETCH_DOCTOR_FAILURE';
 export const FETCH_APPOINTMENT_SUCCESS = 'FETCH_APPOINTMENT_SUCCESS';
 export const FETCH_APPOINTMENT_FAILURE = 'FETCH_APPOINTMENT_FAILURE';
 export const BOOK_NEW_APPOINTMENT = 'BOOK_NEW_APPOINTMENT';
+export const DELETE_DOCTOR = 'DELETE_DOCTOR';
 
 export const fetchDoctorSuccess = (payload) => ({
   type: FETCH_DOCTOR_SUCCESS,
@@ -26,5 +27,10 @@ export const fetchAppointmentFailure = (payload) => ({
 
 export const bookAppointment = (payload) => ({
   type: BOOK_NEW_APPOINTMENT,
+  payload,
+});
+
+export const deleteDoctor = (payload) => ({
+  type: DELETE_DOCTOR,
   payload,
 });

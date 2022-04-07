@@ -1,21 +1,24 @@
 /* eslint-disable import/prefer-default-export */
 import axios from 'axios';
-
 import {
   fetchDoctorSuccess,
   fetchDoctorFailure,
   fetchAppointmentFailure,
   fetchAppointmentSuccess,
   bookAppointment,
+  deleteDoctor,
 } from '../actions/action';
 
 const baseURL = 'http://127.0.0.1:3000/api/v1/doctors';
 
 export const fetchD = () => (dispatch) => {
+  console.log('pumas1111');
   axios
     .get(baseURL)
     .then((res) => {
       const doctors = res.data;
+      console.log('pumas');
+      console.log(doctors);
       dispatch(fetchDoctorSuccess(doctors));
     })
     .catch((err) => {
@@ -55,4 +58,10 @@ export const addAppointment = ({
         }
       });
   };
+};
+
+export const removeDoctor = (identify) => {
+  const id = identify;
+  axios.delete(`http://127.0.0.1:3000/api/v1/doctors/${id}`)
+    .then(deleteDoctor(id));
 };

@@ -45,7 +45,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Doctors />} />
             <Route path="/doctor-details/:id" element={<DetailPage data={location.state} />} />
-            <Route path="/book-appointment" element={<Book data={location.state} />} />
+            <Route path="/book-appointment" element={<Book />} />
             <Route path="/my-appointments" element={<Appointments />} />
             <Route path="/add-doctor" element={<AddDoctor />} />
           </Routes>
