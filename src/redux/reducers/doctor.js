@@ -1,15 +1,4 @@
-import {
-  FETCH_DOCTOR_SUCCESS,
-  FETCH_DOCTOR_FAILURE,
-  DELETE_DOCTOR,
-}
-  from '../actions/action';
-
-// const initialState = {
-//   doctors: [],
-// };
-// // eslint-disable-next-line
-// let cacheDoctors = [];
+import { FETCH_DOCTOR_SUCCESS, FETCH_DOCTOR_FAILURE, DELETE_DOCTOR } from '../actions/action';
 
 const initialState = [];
 
@@ -23,8 +12,6 @@ const doctorReducer = (state = initialState, { type, payload }) => {
       return state;
 
     case DELETE_DOCTOR: {
-      console.log('payload', payload);
-      // const newState = state.filter((doctor) => doctor.id !== payload);
       return state;
     }
 

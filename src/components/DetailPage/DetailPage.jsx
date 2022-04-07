@@ -1,22 +1,20 @@
 import React from 'react';
-import { NavLink, useNavigate } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
-// import { useDispatch } from 'react-redux';
 import { removeDoctor } from '../../redux/thunk/api';
-// import MeredithGrey from '../../assets/doctors/MeredithGrey.jpeg';
 
 const DetailPage = ({
   data: {
     id, name, image, specialty, age, bio, experience, fee,
   },
 }) => {
-  const navigate = useNavigate();
   const identify = id;
-  console.log('Pumaaaas', identify);
-  // const dispatch = useDispatch();
   return (
     <>
-      <main key={id} className="flex flex-col bg-inherit md:h-5/6 md:justify-center gap-x-20 pt-20 pb-5 md:pb-0 md:flex-row px-4 md:px-0">
+      <main
+        key={id}
+        className="flex flex-col bg-inherit md:h-5/6 md:justify-center gap-x-20 pt-20 pb-5 md:pb-0 md:flex-row px-4 md:px-0"
+      >
         <div>
           <img
             src={image}
@@ -59,9 +57,7 @@ const DetailPage = ({
               </p>
             </li>
           </ul>
-          <p>
-            {bio}
-          </p>
+          <p>{bio}</p>
           <div className="flex justify-between">
             <NavLink
               to="/book-appointment"
@@ -79,10 +75,7 @@ const DetailPage = ({
             <button
               type="button"
               className="bg-red-600 hover:bg-red-400 p-4 rounded-full text-slate-50"
-              onClick={() => {
-                removeDoctor(identify);
-                setTimeout(() => navigate('/'), 3000);
-              }}
+              onClick={() => removeDoctor(identify)}
             >
               Delete
             </button>
@@ -90,9 +83,7 @@ const DetailPage = ({
         </aside>
       </main>
       <footer>
-        <NavLink
-          to="/"
-        >
+        <NavLink to="/">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-12 bg-primary hover:bg-lime-400 font-bold text-3xl

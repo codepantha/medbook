@@ -12,13 +12,10 @@ import {
 const baseURL = 'http://127.0.0.1:3000/api/v1/doctors';
 
 export const fetchD = () => (dispatch) => {
-  console.log('pumas1111');
   axios
     .get(baseURL)
     .then((res) => {
       const doctors = res.data;
-      console.log('pumas');
-      console.log(doctors);
       dispatch(fetchDoctorSuccess(doctors));
     })
     .catch((err) => {
@@ -43,18 +40,27 @@ export const addAppointment = ({
 }) => {
   const apiURL = `http://127.0.0.1:3000/api/v1/users/${userId}/appointments`;
   return (dispatch) => {
-    axios.post(apiURL, {
-      doctor_id: doctorId,
-      appointment_date: bookingDate,
-      city,
-    }, {
-      'Content-Type': 'application/json',
-    })
+    axios
+      .post(
+        apiURL,
+        {
+          doctor_id: doctorId,
+          appointment_date: bookingDate,
+          city,
+        },
+        {
+          'Content-Type': 'application/json',
+        },
+      )
       .then((response) => {
         if (response.status === 'Success') {
-          dispatch(bookAppointment({
-            doctorId, bookingDate, city,
-          }));
+          dispatch(
+            bookAppointment({
+              doctorId,
+              bookingDate,
+              city,
+            }),
+          );
         }
       });
   };
@@ -62,6 +68,5 @@ export const addAppointment = ({
 
 export const removeDoctor = (identify) => {
   const id = identify;
-  axios.delete(`http://127.0.0.1:3000/api/v1/doctors/${id}`)
-    .then(deleteDoctor(id));
+  axios.delete(`http://127.0.0.1:3000/api/v1/doctors/${id}`).then(deleteDoctor(id));
 };
