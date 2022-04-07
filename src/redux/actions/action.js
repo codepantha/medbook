@@ -4,6 +4,10 @@ export const FETCH_APPOINTMENT_SUCCESS = 'FETCH_APPOINTMENT_SUCCESS';
 export const FETCH_APPOINTMENT_FAILURE = 'FETCH_APPOINTMENT_FAILURE';
 export const BOOK_NEW_APPOINTMENT = 'BOOK_NEW_APPOINTMENT';
 export const DELETE_DOCTOR = 'DELETE_DOCTOR';
+export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
+export const LOGIN_FAILURE = 'LOGIN_FAILURE';
+export const LOGIN_REQUEST = 'LOGIN_REQUEST';
+export const LOGOUT = 'LOGOUT';
 
 export const fetchDoctorSuccess = (payload) => ({
   type: FETCH_DOCTOR_SUCCESS,
