@@ -1,14 +1,19 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
+// import { useDispatch } from 'react-redux';
 import { removeDoctor } from '../../redux/thunk/api';
+// import MeredithGrey from '../../assets/doctors/MeredithGrey.jpeg';
 
 const DetailPage = ({
   data: {
     id, name, image, specialty, age, bio, experience, fee,
   },
 }) => {
+  const navigate = useNavigate();
   const identify = id;
+  console.log('Pumaaaas', identify);
+  // const dispatch = useDispatch();
   return (
     <>
       <main key={id} className="flex flex-col bg-inherit md:h-5/6 md:justify-center gap-x-20 pt-20 pb-5 md:pb-0 md:flex-row px-4 md:px-0">
@@ -74,7 +79,10 @@ const DetailPage = ({
             <button
               type="button"
               className="bg-red-600 hover:bg-red-400 p-4 rounded-full text-slate-50"
-              onClick={() => removeDoctor(identify)}
+              onClick={() => {
+                removeDoctor(identify);
+                setTimeout(() => navigate('/'), 3000);
+              }}
             >
               Delete
             </button>
