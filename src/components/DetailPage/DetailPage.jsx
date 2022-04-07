@@ -56,12 +56,19 @@ const DetailPage = ({
           {bio}
         </p>
         <div className="flex justify-between">
-          <button
-            type="button"
-            className="bg-primary hover:bg-lime-400 p-4 rounded-full text-slate-50"
+          <NavLink
+            to="/book-appointment"
+            state={{
+              id: { id },
+            }}
           >
-            Appointment
-          </button>
+            <button
+              type="button"
+              className="bg-primary hover:bg-lime-400 p-4 rounded-full text-slate-50"
+            >
+              Appointment
+            </button>
+          </NavLink>
           <button
             type="button"
             className="bg-red-600 hover:bg-red-400 p-4 rounded-full text-slate-50"
