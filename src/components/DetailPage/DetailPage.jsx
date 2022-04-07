@@ -1,39 +1,58 @@
 import React from 'react';
-import MeredithGrey from '../../assets/doctors/MeredithGrey.jpeg';
+import PropTypes from 'prop-types';
+// import MeredithGrey from '../../assets/doctors/MeredithGrey.jpeg';
 
-const DetailPage = () => (
+const DetailPage = ({
+  data: {
+    id, name, image, specialty, age, bio, experience, fee,
+  },
+}) => (
   <>
-    <main className="flex flex-col bg-inherit md:h-5/6 md:justify-center gap-x-20 pt-20 pb-5 md:pb-0 md:flex-row px-4 md:px-0">
+    <main key={id} className="flex flex-col bg-inherit md:h-5/6 md:justify-center gap-x-20 pt-20 pb-5 md:pb-0 md:flex-row px-4 md:px-0">
       <div>
         <img
-          src={MeredithGrey}
-          alt="Dr. Grey"
+          src={image}
+          alt={name}
           className="rounded-3xl border-4 border-zinc-600 dark:border-neutral-300"
         />
       </div>
       <aside className="md:w-3/12 flex flex-col gap-y-5">
         <div className="md:block flex flex-col gap-y-3 pt-3">
-          <p className="text-3xl font-bold md:text-right text-center">Dr. Meredith Grey</p>
-          <p className="text-lg md:text-right text-center">General Surgeon</p>
+          <p className="text-3xl font-bold md:text-right text-center">
+            Dr.
+            {' '}
+            {name}
+          </p>
+          <p className="text-lg md:text-right text-center">{specialty}</p>
         </div>
         <ul>
           <li className="flex justify-between bg-gray-300 dark:bg-gray-800 p-2">
-            <p>Consultation Fee:</p>
-            <p>$50</p>
+            <p>Consultation Fee: </p>
+            <p>
+              {' '}
+              $
+              {fee}
+            </p>
           </li>
           <li className="flex justify-between bg-neutral-100 dark:bg-gray-600 p-2">
             <p>Experience:</p>
-            <p>20 years</p>
+            <p>
+              {experience}
+              {' '}
+              years
+            </p>
           </li>
           <li className="flex justify-between bg-gray-300  dark:bg-gray-800 p-2">
             <p>Age:</p>
-            <p>45 years</p>
+            <p>
+              {age}
+              {' '}
+              years
+            </p>
           </li>
         </ul>
         <p>
-          Meredith Grey is the head of general surgery and former Director of the Residency Program
-          at Grey Sloan Memorial Hospital. She is the daughter of the now-deceased Ellis Grey, a
-          famed general surgeon, and the now-deceased Thatcher Grey.
+          {bio}
         </p>
         <div className="flex justify-between">
           <button
@@ -71,5 +90,38 @@ const DetailPage = () => (
     </footer>
   </>
 );
+
+DetailPage.propTypes = {
+  data: PropTypes.objectOf(
+    PropTypes.number,
+    PropTypes.string,
+    PropTypes.string,
+    PropTypes.string,
+    PropTypes.number,
+    PropTypes.string,
+    PropTypes.number,
+    PropTypes.number,
+  ),
+  id: PropTypes.number,
+  name: PropTypes.string,
+  image: PropTypes.string,
+  specialty: PropTypes.string,
+  age: PropTypes.number,
+  bio: PropTypes.string,
+  experience: PropTypes.number,
+  fee: PropTypes.number,
+};
+
+DetailPage.defaultProps = {
+  data: {},
+  id: 0,
+  name: '',
+  image: '',
+  specialty: '',
+  age: 0,
+  bio: '',
+  experience: 0,
+  fee: 0,
+};
 
 export default DetailPage;
