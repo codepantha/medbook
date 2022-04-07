@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { useNavigate } from 'react-router-dom';
 import Input from '../../components/Input/Input';
+import domain from '../../redux/thunk/api';
 
 const defaultInput = {
   name: '',
@@ -17,6 +18,7 @@ const AddDoctor = () => {
   const [inputs, setInputs] = useState(defaultInput);
   const [errors, setErrors] = useState([]);
   const [success, setSuccess] = useState(null);
+  const [uploadImage, setUploadImage] = useState(null);
   const navigate = useNavigate();
 
   const {
@@ -53,23 +55,11 @@ const AddDoctor = () => {
     }
   };
 
-  const addADoctor = async () => {
+  const addADoctor = async (formData) => {
     try {
-      const res = await fetch('http://127.0.0.1:3000/api/v1/doctors', {
+      const res = await fetch(`${domain}/api/v1/doctors`, {
         method: 'POST',
-        headers: {
-          Accept: 'application/json',
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          name,
-          bio,
-          experience,
-          specialty,
-          profile_pic: profilePic,
-          date_of_birth: dob,
-          consultation_fee: consultation,
-        }),
+        body: formData,
       });
 
       const data = await res.json();
@@ -81,7 +71,23 @@ const AddDoctor = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await addADoctor();
+    const formData = new FormData();
+    formData.append('name', name);
+    formData.append('bio', bio);
+    formData.append('experience', experience);
+    formData.append('specialty', specialty);
+    formData.append('profile_pic', uploadImage);
+    formData.append('date_of_birth', dob);
+    formData.append('consultation_fee', consultation);
+
+    await addADoctor(formData);
+  };
+
+  const handleUpload = (e) => {
+    handleChange(e);
+    const image = e.target?.files[0];
+
+    setUploadImage(image);
   };
 
   return (
@@ -92,9 +98,7 @@ const AddDoctor = () => {
           method="post"
           className="w-full flex flex-col justify-center items-center"
         >
-          <h2 className="uppercase text-gray-600 text-2xl font-bold mb-2">
-            Add a Doctor
-          </h2>
+          <h2 className="uppercase text-gray-600 text-2xl font-bold mb-2">Add a Doctor</h2>
 
           {errors.length
             ? errors.map((error) => (
@@ -104,9 +108,7 @@ const AddDoctor = () => {
             ))
             : ''}
 
-          {success && (
-            <p className="text-sm text-green-800 font-medium">{success}</p>
-          )}
+          {success && <p className="text-sm text-green-800 font-medium">{success}</p>}
 
           <div className="w-full mb-4">
             <span className="label">Name</span>
@@ -161,11 +163,11 @@ const AddDoctor = () => {
           <div className="w-full mb-4">
             <span className="label">Profile picture</span>
             <Input
-              type="text"
+              type="file"
               name="profilePic"
-              placeholder="https://link-to-your-dp.jpg"
               value={profilePic}
-              handleChange={handleChange}
+              handleChange={handleUpload}
+              accept=".jpg, .jpeg, .png"
             />
           </div>
           <div className="w-full mb-4">

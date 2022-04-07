@@ -7,7 +7,7 @@ import { fetchD } from '../../redux/thunk/api';
 import DoctorCard from './DoctorCard';
 
 const Doctor = () => {
-  const doctor = useSelector((state) => state.doctor);
+  const doctors = useSelector((state) => state.doctor);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchD());
@@ -18,11 +18,11 @@ const Doctor = () => {
       <h1 className="text-center text-bold text-2xl font-bold m-5">Available Doctors:</h1>
       <div>
         <div className="card-holder">
-          <DoctorCard doctor={doctor} />
+          {doctors.map((doctor) => (
+            <DoctorCard doctor={doctor} key={doctor.id} />
+          ))}
         </div>
-        <div className="button-class flex justify-between inset-y-0">
-
-        </div>
+        <div className="button-class flex justify-between inset-y-0"></div>
       </div>
     </>
   );
