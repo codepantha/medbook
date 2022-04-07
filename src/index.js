@@ -6,6 +6,8 @@ import App from './App';
 
 import store from './redux/store/store';
 
+const domain = 'https://medbookapi.herokuapp.com/';
+
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
@@ -16,3 +18,5 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById('root'),
 );
+
+export default domain;
