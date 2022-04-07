@@ -82,14 +82,6 @@ const Sidebar = ({ menuOpened, setMenuOpened }) => (
         <li className="nav-item">
           <ThemeToggler />
         </li>
-        <li className="nav-item">
-          <NavLink
-            to="/detail-page"
-            /* eslint-disable-next-line */
-          >
-            Detail Pages
-          </NavLink>
-        </li>
       </ul>
     </nav>
   </div>
