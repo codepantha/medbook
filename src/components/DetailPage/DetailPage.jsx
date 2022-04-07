@@ -3,6 +3,7 @@ import { NavLink, useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import axios from 'axios';
 import { deleteDoctor } from '../../redux/actions/action';
+import domain from '../../redux/thunk/api';
 
 const DetailPage = ({
   data: {
@@ -14,7 +15,7 @@ const DetailPage = ({
 
   const removeDoctor = (identify) => {
     const id = identify;
-    axios.delete(`http://127.0.0.1:3000/api/v1/doctors/${id}`).then(() => {
+    axios.delete(`${domain}/api/v1/doctors/${id}`).then(() => {
       deleteDoctor(id);
       navigate('/');
     });
