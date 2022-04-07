@@ -28,8 +28,6 @@ const Reserve = () => {
     <main className="flex flex-col h-full justify-center items-center gap-10">
       <p className="text-3xl font-bold text-center">New Appointment</p>
       <form className="flex flex-col gap-3 p-5" onSubmit={(e) => submitAppointmentToStore(e, dispatch, startDate.toISOString().split('T')[0])}>
-        {/* {id !== 0
-          && console.log('pumas')} */}
         <select
           id="doctors"
           className="border-solid border-2 p-3 rounded-full"
