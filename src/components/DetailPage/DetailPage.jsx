@@ -1,14 +1,23 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
-import PropTypes from 'prop-types';
-import { removeDoctor } from '../../redux/thunk/api';
+import React from "react";
+import { NavLink, useNavigate } from "react-router-dom";
+import PropTypes from "prop-types";
+import axios from "axios";
+import { deleteDoctor } from "../../redux/actions/action";
 
 const DetailPage = ({
-  data: {
-    id, name, image, specialty, age, bio, experience, fee,
-  },
+  data: { id, name, image, specialty, age, bio, experience, fee }
 }) => {
   const identify = id;
+  const navigate = useNavigate();
+
+  const removeDoctor = (identify) => {
+    const id = identify;
+    axios.delete(`http://127.0.0.1:3000/api/v1/doctors/${id}`).then(() => {
+      deleteDoctor(id);
+      navigate("/");
+    });
+  };
+
   return (
     <>
       <main
@@ -25,36 +34,22 @@ const DetailPage = ({
         <aside className="md:w-3/12 flex flex-col gap-y-5">
           <div className="md:block flex flex-col gap-y-3 pt-3">
             <p className="text-3xl font-bold md:text-right text-center">
-              Dr.
-              {' '}
-              {name}
+              Dr. {name}
             </p>
             <p className="text-lg md:text-right text-center">{specialty}</p>
           </div>
           <ul>
             <li className="flex justify-between bg-gray-300 dark:bg-gray-800 p-2">
               <p>Consultation Fee: </p>
-              <p>
-                {' '}
-                $
-                {fee}
-              </p>
+              <p> ${fee}</p>
             </li>
             <li className="flex justify-between bg-neutral-100 dark:bg-gray-600 p-2">
               <p>Experience:</p>
-              <p>
-                {experience}
-                {' '}
-                years
-              </p>
+              <p>{experience} years</p>
             </li>
             <li className="flex justify-between bg-gray-300  dark:bg-gray-800 p-2">
               <p>Age:</p>
-              <p>
-                {age}
-                {' '}
-                years
-              </p>
+              <p>{age} years</p>
             </li>
           </ul>
           <p>{bio}</p>
@@ -62,7 +57,7 @@ const DetailPage = ({
             <NavLink
               to="/book-appointment"
               state={{
-                id: { id },
+                id: { id }
               }}
             >
               <button
@@ -107,36 +102,28 @@ const DetailPage = ({
 };
 
 DetailPage.propTypes = {
-  data: PropTypes.objectOf(
-    PropTypes.number,
-    PropTypes.string,
-    PropTypes.string,
-    PropTypes.string,
-    PropTypes.number,
-    PropTypes.string,
-    PropTypes.number,
-    PropTypes.number,
-  ),
-  id: PropTypes.number,
-  name: PropTypes.string,
-  image: PropTypes.string,
-  specialty: PropTypes.string,
-  age: PropTypes.number,
-  bio: PropTypes.string,
-  experience: PropTypes.number,
-  fee: PropTypes.number,
+  data: PropTypes.shape({
+    id: PropTypes.number,
+    name: PropTypes.string,
+    image: PropTypes.string,
+    specialty: PropTypes.string,
+    age: PropTypes.number,
+    bio: PropTypes.string,
+    experience: PropTypes.number,
+    fee: PropTypes.number
+  })
 };
 
 DetailPage.defaultProps = {
   data: {},
   id: 0,
-  name: '',
-  image: '',
-  specialty: '',
+  name: "",
+  image: "",
+  specialty: "",
   age: 0,
-  bio: '',
+  bio: "",
   experience: 0,
-  fee: 0,
+  fee: 0
 };
 
 export default DetailPage;

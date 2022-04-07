@@ -28,7 +28,7 @@ function DoctorCard({ doctor }) {
                 age: doc.age,
                 bio: doc.bio,
                 experience: doc.experience,
-                fee: doc.consultation_fee,
+                fee: parseFloat(doc.consultation_fee),
               }}
             >
               <div className="rounded rounded-full pt-4 carousel-item relative float-left w-full">

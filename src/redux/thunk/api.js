@@ -6,7 +6,6 @@ import {
   fetchAppointmentFailure,
   fetchAppointmentSuccess,
   bookAppointment,
-  deleteDoctor,
 } from '../actions/action';
 
 const baseURL = 'http://127.0.0.1:3000/api/v1/doctors';
@@ -66,7 +65,10 @@ export const addAppointment = ({
   };
 };
 
-export const removeDoctor = (identify) => {
-  const id = identify;
-  axios.delete(`http://127.0.0.1:3000/api/v1/doctors/${id}`).then(deleteDoctor(id));
-};
+// export const removeDoctor = (identify) => {
+//   const id = identify;
+//   axios.delete(`http://127.0.0.1:3000/api/v1/doctors/${id}`)
+//     .then(() => {
+//       deleteDoctor(id);
+//     });
+// };
