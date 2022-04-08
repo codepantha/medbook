@@ -6,20 +6,21 @@
 
 Landing Page | Signup Form
 :------:|:-----:
-![image](https://user-images.githubusercontent.com/87689547/154068393-d21e8383-9991-4134-b368-ca7a66e474fb.png) | ![image](https://user-images.githubusercontent.com/87689547/154068793-0d474265-223c-4e01-b6f5-2d9520f05b32.png)
+![image](https://user-images.githubusercontent.com/87689547/162473098-14c0c8fb-066c-4f94-86a7-f18f21b97958.png) | ![image](https://user-images.githubusercontent.com/87689547/162473198-806cbaa1-2d1e-4c97-8b22-2823342711e4.png)
+
 
 Add Doctor | Book Appointment
 :------:|:-----:
-![image](https://user-images.githubusercontent.com/87689547/154068393-d21e8383-9991-4134-b368-ca7a66e474fb.png) | ![image](https://user-images.githubusercontent.com/87689547/154068793-0d474265-223c-4e01-b6f5-2d9520f05b32.png)
+![image](https://user-images.githubusercontent.com/87689547/162473374-e2e3960b-e569-45e7-8274-30cd8c97e92c.png) | ![image](https://user-images.githubusercontent.com/87689547/162473422-c4ddcb53-7467-411d-acb1-199d69e4b4cf.png)
 
 Add Doctor Dark Theme | Mobile Version
 :------:|:-----:
-![image](https://user-images.githubusercontent.com/87689547/154068393-d21e8383-9991-4134-b368-ca7a66e474fb.png) | ![image](https://user-images.githubusercontent.com/87689547/154068793-0d474265-223c-4e01-b6f5-2d9520f05b32.png)
+![image](https://user-images.githubusercontent.com/87689547/162473476-3214a877-a8a5-42e9-b861-03c0e1be0420.png) | ![image](https://user-images.githubusercontent.com/87689547/162473589-b13ec5ea-078d-45f1-bea6-dbfb3db03c0a.png)
 
 Book Appointment Dark Theme | Mobile Version
 :------:|:-----:
-![image](https://user-images.githubusercontent.com/87689547/154068393-d21e8383-9991-4134-b368-ca7a66e474fb.png) | ![image](https://user-images.githubusercontent.com/87689547/154068793-0d474265-223c-4e01-b6f5-2d9520f05b32.png)
- 
+![image](https://user-images.githubusercontent.com/87689547/162473758-4f5a734b-67e9-4f7b-b069-14aa48f109e4.png) | ![image](https://user-images.githubusercontent.com/87689547/162473893-0df24aa7-1d23-48d1-b68e-19bddaf4edfe.png)
+
 ## Built With
 
 - React
