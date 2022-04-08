@@ -10,7 +10,11 @@ const reducer = (state = initialState, { payload, type }) => {
     case LOGIN_FAILURE:
       return { ...state, error: payload };
     case LOGIN_SUCCESS:
-      return { ...state, user: payload };
+      console.log('Pumaaaaaas');
+      return {
+        ...state,
+        currentUser: payload,
+      };
     case LOGOUT:
       return initialState;
     default:
