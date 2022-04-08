@@ -48,7 +48,11 @@ function App() {
       </header>
       <main className="grid grid-cols-12 h-screen">
         <SideBar menuOpened={menuOpened} setMenuOpened={handleMenu} />
-        <section className="col-span-12 dark-theme-bg theme-transition md:col-span-10 h-screen">
+        <section
+          className={`col-span-12 dark-theme-bg theme-transition h-screen ${
+            location.pathname.includes('landing-page') ? 'md:col-span-12' : 'md:col-span-10'
+          }`}
+        >
           <Routes>
             {!currentUser?.name && <Route path="/landing-page" element={<LandingPage />} />}
             <Route path="/" element={<Doctors />} />

@@ -1,10 +1,15 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import Input from '../../components/Input/Input';
+import { loginUserSuccess } from '../../redux/actions/action';
 import domain from '../../redux/thunk/api';
 
 const SignUpModal = () => {
   const [input, setInput] = useState('');
   const [errors, setErrors] = useState([]);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const createUser = async () => {
     const response = await fetch(`${domain}/api/v1/users`, {
@@ -21,6 +26,12 @@ const SignUpModal = () => {
     setErrors([]);
     if (data?.errors?.name?.length) {
       setErrors(data.errors.name);
+    } else {
+      const response = await fetch(`${domain}/api/v1/users/${input}`);
+      const data = await response.json();
+      dispatch(loginUserSuccess(data.data));
+      navigate('/');
+      localStorage.setItem('currentUser', JSON.stringify(data.data));
     }
   };
 

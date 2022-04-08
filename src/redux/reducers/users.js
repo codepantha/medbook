@@ -1,7 +1,7 @@
 import { LOGIN_FAILURE, LOGIN_SUCCESS, LOGOUT } from '../actions/action';
 
 const initialState = {
-  currentUser: {},
+  currentUser: JSON.parse(localStorage.getItem('currentUser')) || {},
   error: null,
 };
 
@@ -10,13 +10,12 @@ const reducer = (state = initialState, { payload, type }) => {
     case LOGIN_FAILURE:
       return { ...state, error: payload };
     case LOGIN_SUCCESS:
-      console.log('Pumaaaaaas');
       return {
         ...state,
         currentUser: payload,
       };
     case LOGOUT:
-      return initialState;
+      return { ...state, currentUser: {} };
     default:
       return state;
   }

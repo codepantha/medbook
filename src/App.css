@@ -29,7 +29,7 @@ dialog::backdrop {
 }
 
 .nav-link {
-  @apply uppercase tracking-wide text-gray-900 py-3 px-4 w-full inline-block text-sm font-semibold dark-theme-bg theme-transition;
+  @apply uppercase tracking-wide text-gray-900 py-3 px-4 w-full inline-block text-sm font-semibold dark-theme-bg theme-transition text-left;
 }
 
 .btn-primary {

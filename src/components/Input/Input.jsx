@@ -12,6 +12,7 @@ const Input = ({
       value={value}
       className="input-field"
       onChange={handleChange}
+      required
     />
   </>
 );

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import Input from '../../components/Input/Input';
 import domain from '../../redux/thunk/api';
 import { loginUserSuccess } from '../../redux/actions/action';
@@ -8,6 +9,7 @@ const SignInModal = () => {
   const dispatch = useDispatch();
   const [input, setInput] = useState('');
   const [error, setError] = useState([]);
+  const navigate = useNavigate();
 
   const authenticate = async () => {
     const response = await fetch(`${domain}/api/v1/users/${input}`);
@@ -17,6 +19,8 @@ const SignInModal = () => {
       setError(data.message);
     } else {
       dispatch(loginUserSuccess(data.data));
+      navigate('/');
+      localStorage.setItem('currentUser', JSON.stringify(data.data));
     }
   };
 
@@ -58,9 +62,7 @@ const SignInModal = () => {
             name="name"
             id="name"
           />
-          {error.length > 0 && (
-            <span>{error}</span>
-          )}
+          {error.length > 0 && <span className="text-red-600 text-sm">{error}</span>}
           <button type="submit" className="btn btn-primary py-2 w-full mt-4">
             Sign in
           </button>
