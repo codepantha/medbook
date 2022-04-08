@@ -4,19 +4,20 @@ import DatePicker from 'react-datepicker';
 import { fetchD, addAppointment } from '../../redux/thunk/api';
 import 'react-datepicker/dist/react-datepicker.css';
 
-const submitAppointmentToStore = (e, dispatch, startDate) => {
+const submitAppointmentToStore = (e, dispatch, userId, startDate) => {
   e.preventDefault();
   const newAppointment = {
     doctorId: parseInt(document.getElementById('doctors').value, 10),
     bookingDate: startDate,
     city: document.getElementById('city').value,
-    userId: 1,
+    userId: userId,
   };
   dispatch(addAppointment(newAppointment));
 };
 
 const Reserve = () => {
   const doctors = useSelector((state) => state.doctor);
+  const { currentUser } = useSelector((state) => state.users)
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchD());
@@ -28,7 +29,7 @@ const Reserve = () => {
       <p className="text-3xl font-bold text-center">New Appointment</p>
       <form
         className="flex flex-col gap-3 p-5"
-        onSubmit={(e) => submitAppointmentToStore(e, dispatch, startDate.toISOString().split('T')[0])}
+        onSubmit={(e) => submitAppointmentToStore(e, dispatch, currentUser.id, startDate.toISOString().split('T')[0])}
       >
         <div className="relative">
           <select
