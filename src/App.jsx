@@ -46,10 +46,10 @@ function App() {
           <HamburgerIcon handleMenu={handleMenu} menuOpened={menuOpened} />
         </nav>
       </header>
-      <main className="grid grid-cols-12 h-screen">
+      <main className="grid grid-cols-12 min-h-screen">
         <SideBar menuOpened={menuOpened} setMenuOpened={handleMenu} />
         <section
-          className={`col-span-12 dark-theme-bg theme-transition h-screen ${
+          className={`col-span-12 dark-theme-bg theme-transition min-h-screen ${
             location.pathname.includes('landing-page') ? 'md:col-span-12' : 'md:col-span-10'
           }`}
         >

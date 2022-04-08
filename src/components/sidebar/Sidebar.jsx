@@ -22,7 +22,9 @@ const Sidebar = ({ menuOpened, setMenuOpened }) => {
     <div
       className={`bg-white shadow-lg dark:border-r dark:border-gray-800 dark-theme-bg theme-transition col-span-12  transition duration-200 absolute sidebar w-screen md:w-full md:translate-x-0 z-40 ${
         menuOpened ? 'transform translate-x-0 h-screen ' : 'transform translate-x-full '
-      } md:col-span-2 ${pathname.includes('landing-page') ? 'md:hidden' : 'md:block '}`}
+      } md:col-span-2 ${
+        pathname.includes('landing-page') ? 'md:hidden' : 'md:block'
+      } h-screen md:h-full`}
       id="sideMenu"
     >
       <img
