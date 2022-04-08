@@ -28,6 +28,10 @@ Book Appointment Dark Theme | Mobile Version
 - [Rails API]('http://codepantha/medbook-api')
 - Tailwindcss
 
+## Kanban Board
+
+- [Project](https://github.com/users/codepantha/projects/2)
+
 ## Set up locally
 
 - Open your terminal and run the following command: <code>git clone https://github.com/codepantherr/medbook.git</code>
