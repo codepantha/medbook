@@ -59,7 +59,7 @@ const Sidebar = ({ menuOpened, setMenuOpened }) => {
                 setMenuOpened();
               }}
             >
-              Reserve
+              Book Appointment
             </NavLink>
           </li>
           <li className="nav-item">

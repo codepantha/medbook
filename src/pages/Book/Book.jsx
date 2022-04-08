@@ -30,7 +30,10 @@ const Reserve = () => {
         className="flex flex-col gap-3 p-5"
         onSubmit={(e) => submitAppointmentToStore(e, dispatch, startDate.toISOString().split('T')[0])}
       >
-        <select id="doctors" className="border-solid border-2 p-3 rounded-full">
+        <select
+          id="doctors"
+          className="border-solid border-2 p-3 rounded-full dark-theme-bg theme-transition dark:border-slate-600"
+        >
           {doctors.map((doctor) => (
             <option key={doctor.id} value={doctor.id}>
               {doctor.specialty}
@@ -45,13 +48,14 @@ const Reserve = () => {
           id="city"
           placeholder="City"
           required
-          className="border-solid border-b-2 p-3"
+          className="border-solid border-b-2 p-3 dark-theme-bg theme-transition dark:border-slate-600"
         />
-        <p className="text-xl">Select your date:</p>
-        <div className="text-xl border-primary border-2 border-solid m-0 rounded-full w-30 p-3 flex flex-col items-center">
+        <p className="text-xl">Select appointment date:</p>
+        <div className="text-xl border-primary dark:border-slate-600 border-2 border-solid m-0 rounded-full w-30 p-3 flex flex-col items-center">
           <DatePicker
             minDate={new Date()}
             wrapperClassName="content-center w-auto"
+            className="dark:bg-inherit"
             dateFormat="yyyy-MM-dd"
             selected={startDate}
             onChange={(startDate) => setStartDate(startDate)}
@@ -60,7 +64,7 @@ const Reserve = () => {
         <input
           type="submit"
           value="Appointment"
-          className="bg-primary hover:bg-lime-400 p-4 rounded-full text-slate-50 cursor-pointer"
+          className="bg-primary hover:bg-lime-400 p-4 rounded-full text-slate-50 cursor-pointer dark:text-black dark:bg-primary dark:hover:bg-lime-400 "
         />
       </form>
     </main>

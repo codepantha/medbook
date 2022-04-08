@@ -182,7 +182,7 @@ const AddDoctor = () => {
           </div>
           <button
             type="submit"
-            className="w-full md:w-auto md:self-start py-4 px-4 bg-primary text-sm uppercase rounded-md shadow-md text-primaryContrast"
+            className="w-full md:w-auto md:self-start py-4 px-4 bg-primary hover:bg-lime-400 text-sm uppercase rounded-md shadow-md text-primaryContrast dark:text-black dark:hover:bg-lime-400"
           >
             Add doctor
           </button>
