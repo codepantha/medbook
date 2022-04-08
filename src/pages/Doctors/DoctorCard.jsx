@@ -15,8 +15,8 @@ const DoctorCard = ({ doctor }) => {
   useEffect(() => fetchDoctorImage(), []);
 
   return (
-    <div>
-      <div className="text-center max-w-sm overflow-hidden flex items-center flex-col border">
+    <div className="h-full grid">
+      <div className="text-center max-w-sm mx-auto border rounded-lg p-4 w-3/4 md:w-full dark-theme-bg theme-transition">
         <NavLink
           to={`doctor-details/${doctor.id}`}
           state={{
@@ -30,44 +30,49 @@ const DoctorCard = ({ doctor }) => {
             fee: doctor.consultation_fee,
           }}
         >
-          <img src={doctorPicture} alt="doc" className="rounded-full object-contain h-28 w-28" />
-        </NavLink>
-        <div>
-          <h1 className="font-bold text-xl mb-2">{doctor.name}</h1>
-          <h1 className="overline p-3 font-bold text-xl mb-2">
-            Experience:
-            {' '}
-            {doctor.experience}
-            {' '}
-            years
-          </h1>
-          <div className="text-gray-700 text-base">
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+          <img
+            src={doctorPicture}
+            alt="doc"
+            className="rounded-full object-contain h-40 w-40 mx-auto"
+          />
+
+          <div>
+            <h3 className="font-bold text-xl mb-2">{doctor.name}</h3>
+            <h3 className="overline p-3 font-bold text-xl mb-2">
+              Experience:
+              {' '}
+              {doctor.experience}
+              {' '}
+              years
+            </h3>
+            <div>
+              <p className="text-[#b7b9b9]">{doctor.bio}</p>
+            </div>
           </div>
-        </div>
-        <div className="px-6 pt-4 pb-2">
-          <button
-            type="button"
-            href="https://twitter.com/"
-            className="cursor-pointer inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
-          >
-            <FaFacebookF size={20} />
-          </button>
-          <button
-            type="button"
-            href="https://twitter.com/"
-            className="cursor-pointer inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
-          >
-            <FaTwitter size={20} />
-          </button>
-          <button
-            type="button"
-            href="https://twitter.com/"
-            className="cursor-pointer inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
-          >
-            <FaLinkedinIn size={20} />
-          </button>
-        </div>
+          <div className="px-6 pt-4 pb-2">
+            <button
+              type="button"
+              href="https://twitter.com/"
+              className="cursor-pointer inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
+            >
+              <FaFacebookF size={20} />
+            </button>
+            <button
+              type="button"
+              href="https://twitter.com/"
+              className="cursor-pointer inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
+            >
+              <FaTwitter size={20} />
+            </button>
+            <button
+              type="button"
+              href="https://twitter.com/"
+              className="cursor-pointer inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2"
+            >
+              <FaLinkedinIn size={20} />
+            </button>
+          </div>
+        </NavLink>
       </div>
     </div>
   );

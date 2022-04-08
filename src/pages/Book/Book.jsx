@@ -26,19 +26,23 @@ const Reserve = () => {
     dispatch(fetchD());
   }, [dispatch]);
   const [startDate, setStartDate] = useState(new Date());
-  if (status === 'success') navigate('/my-appointments');
-
+  const submitHandler = () => {
+    if (status === 'success') navigate('/my-appointments');
+  };
   return (
     <main className="flex flex-col h-full justify-center items-center gap-10">
       <p className="text-3xl font-bold text-center">New Appointment</p>
       <form
         className="flex flex-col gap-3 p-5"
-        onSubmit={(e) => submitAppointmentToStore(e, dispatch, currentUser.id, startDate.toISOString().split('T')[0])}
+        onSubmit={(e) => {
+          submitAppointmentToStore(e, dispatch, currentUser.id, startDate.toISOString().split('T')[0]);
+          submitHandler();
+        }}
       >
         <div className="relative">
           <select
             id="doctors"
-            className="border-solid border-2 p-3 rounded-full dark-theme-bg theme-transition dark:border-slate-600 appearance-none w-full"
+            className="border-solid border-2 py-3 pr-10 pl-3 rounded-full dark-theme-bg theme-transition dark:border-slate-600 appearance-none w-full"
           >
             {doctors.map((doctor) => (
               <option key={doctor.id} value={doctor.id}>
