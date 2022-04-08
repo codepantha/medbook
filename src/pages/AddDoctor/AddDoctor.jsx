@@ -91,14 +91,14 @@ const AddDoctor = () => {
   };
 
   return (
-    <section className="w-full flex justify-center items-center min-h-screen md:h-full bg-slate-200 dark:bg-slate-700">
-      <div className="w-5/6 md:w-2/5 h-full md:h-3/4 md:overflow-scroll py-4 px-6 bg-white border-2 border-t-darkContrast shadow-lg">
+    <section className="w-full flex justify-center items-center min-h-screen md:h-full py-16 md:py-0 dark-theme-bg theme-transition">
+      <div className="w-5/6 md:w-2/5 h-full md:h-3/4 md:overflow-y-scroll py-4 px-6 bg-white border-2 border-slate-600 shadow-lg dark-theme-bg theme-transition">
         <form
           onSubmit={handleSubmit}
           method="post"
           className="w-full flex flex-col justify-center items-center"
         >
-          <h2 className="uppercase text-gray-600 text-2xl font-bold mb-2">Add a Doctor</h2>
+          <h2 className="uppercase  text-2xl font-bold mb-2">Add a Doctor</h2>
 
           {errors.length
             ? errors.map((error) => (
@@ -182,7 +182,7 @@ const AddDoctor = () => {
           </div>
           <button
             type="submit"
-            className="self-start py-4 px-4 bg-primary text-sm uppercase rounded-md shadow-md text-primaryContrast"
+            className="w-full md:w-auto md:self-start py-4 px-4 bg-primary hover:bg-lime-400 text-sm uppercase rounded-md shadow-md text-primaryContrast dark:text-black dark:hover:bg-lime-400"
           >
             Add doctor
           </button>

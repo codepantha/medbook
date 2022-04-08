@@ -12,7 +12,7 @@ const Doctors = () => {
   }, [dispatch]);
 
   return (
-    <>
+    <div className="overflow-y-auto">
       <h1 className="text-center text-bold text-2xl font-bold m-5">Available Doctors:</h1>
       <div>
         <div id="carouselExampleControls" className="grid grid-cols-3 gap-10">
@@ -56,7 +56,7 @@ const Doctors = () => {
           />
         </svg>
       </footer>
-    </>
+    </div>
   );
 };
 

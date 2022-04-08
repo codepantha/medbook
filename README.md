@@ -1,16 +1,31 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-## Reserve a Doctor
+## MedBook
 
-> Do you want keep track of your doctors appointments? Welcome to your app!
+> Do you want keep track of your doctors appointments? Welcome to MedBook!
 
+Landing Page | Signup Form
+:------:|:-----:
+![image](https://user-images.githubusercontent.com/87689547/154068393-d21e8383-9991-4134-b368-ca7a66e474fb.png) | ![image](https://user-images.githubusercontent.com/87689547/154068793-0d474265-223c-4e01-b6f5-2d9520f05b32.png)
+
+Add Doctor | Book Appointment
+:------:|:-----:
+![image](https://user-images.githubusercontent.com/87689547/154068393-d21e8383-9991-4134-b368-ca7a66e474fb.png) | ![image](https://user-images.githubusercontent.com/87689547/154068793-0d474265-223c-4e01-b6f5-2d9520f05b32.png)
+
+Add Doctor Dark Theme | Mobile Version
+:------:|:-----:
+![image](https://user-images.githubusercontent.com/87689547/154068393-d21e8383-9991-4134-b368-ca7a66e474fb.png) | ![image](https://user-images.githubusercontent.com/87689547/154068793-0d474265-223c-4e01-b6f5-2d9520f05b32.png)
+
+Book Appointment Dark Theme | Mobile Version
+:------:|:-----:
+![image](https://user-images.githubusercontent.com/87689547/154068393-d21e8383-9991-4134-b368-ca7a66e474fb.png) | ![image](https://user-images.githubusercontent.com/87689547/154068793-0d474265-223c-4e01-b6f5-2d9520f05b32.png)
  
 ## Built With
 
 - React
 - Redux
-- Rails API
-- Linters
+- [Rails API]('http://codepantha/medbook-api')
+- Tailwindcss
 
 ## Set up locally
 
@@ -62,4 +77,4 @@ Give a ⭐️ if you like this project!
 
 ## License
 
-- MIT License
+- [MIT License](./LICENSE)
