@@ -6,7 +6,6 @@ export const BOOK_NEW_APPOINTMENT = 'BOOK_NEW_APPOINTMENT';
 export const DELETE_DOCTOR = 'DELETE_DOCTOR';
 export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
 export const LOGIN_FAILURE = 'LOGIN_FAILURE';
-export const LOGIN_REQUEST = 'LOGIN_REQUEST';
 export const LOGOUT = 'LOGOUT';
 
 export const fetchDoctorSuccess = (payload) => ({
@@ -36,5 +35,15 @@ export const bookAppointment = (payload) => ({
 
 export const deleteDoctor = (payload) => ({
   type: DELETE_DOCTOR,
+  payload,
+});
+
+export const loginUserSuccess = (payload) => ({
+  type: LOGIN_SUCCESS,
+  payload,
+});
+
+export const loginUserFailure = (payload) => ({
+  type: LOGIN_FAILURE,
   payload,
 });

@@ -39,7 +39,7 @@ const SignUpModal = () => {
   };
   return (
     <div>
-      <dialog id="signup-modal" className="p-10 rounded-md relative">
+      <dialog id="signup-modal" className="p-10 rounded-md relative max-w-md">
         <button type="button" onClick={closeModal}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -57,10 +57,14 @@ const SignUpModal = () => {
           <Input
             value={input}
             handleChange={handleChange}
-            placeholder="Promise Eze"
+            placeholder="Enter a unique name"
             type="text"
             name="name"
+            id="name"
           />
+          <span className="text-gray-600 text-sm">
+            Name should be unique and between 5 to 50 char.
+          </span>
           {errors.length > 0 && (
             <ul className="p-2" id="errors-list">
               {errors.map((error, index) => (
