@@ -11,7 +11,7 @@ const Appointment = () => {
 
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(fetchAp(2));
+    dispatch(fetchAp(1));
     dispatch(fetchD());
   }, [dispatch]);
 

@@ -127,8 +127,12 @@ DetailPage.propTypes = {
     age: PropTypes.number,
     bio: PropTypes.string,
     experience: PropTypes.number,
-    fee: PropTypes.number,
-  }).isRequired,
+    fee: PropTypes.string,
+  }),
+};
+
+DetailPage.defaultProps = {
+  data: {},
 };
 
 export default DetailPage;
