@@ -13,6 +13,7 @@ const Sidebar = ({ menuOpened, setMenuOpened }) => {
   const { pathname } = location;
 
   const logOut = () => {
+    setMenuOpened();
     dispatch(logoutUser());
     localStorage.removeItem('currentUser');
     navigate('/landing-page');

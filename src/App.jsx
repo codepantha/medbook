@@ -18,6 +18,7 @@ function App() {
   const location = useLocation();
   const navigate = useNavigate();
   const currentUser = useSelector((state) => state.users.currentUser);
+  const isLandingPage = location.pathname.includes('landing-page');
 
   useEffect(() => {
     if (menuOpened && window.innerWidth < 768) {
@@ -35,14 +36,13 @@ function App() {
       document.getElementsByTagName('html')[0].classList.add(localTheme);
     }
   }, []);
-
   const handleMenu = () => {
     if (window.innerWidth < 768) setMenuOpened((prev) => !prev);
   };
   return (
     <>
       <header>
-        <nav>
+        <nav className={`${isLandingPage ? 'hidden' : ''}`}>
           <HamburgerIcon handleMenu={handleMenu} menuOpened={menuOpened} />
         </nav>
       </header>
@@ -50,7 +50,7 @@ function App() {
         <SideBar menuOpened={menuOpened} setMenuOpened={handleMenu} />
         <section
           className={`col-span-12 dark-theme-bg theme-transition min-h-screen ${
-            location.pathname.includes('landing-page') ? 'md:col-span-12' : 'md:col-span-10'
+            isLandingPage ? 'md:col-span-12' : 'md:col-span-10'
           }`}
         >
           <Routes>

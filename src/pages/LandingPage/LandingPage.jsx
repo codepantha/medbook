@@ -19,8 +19,8 @@ const LandingPage = () => {
   return (
     <div className="h-screen landing-page bg-no-repeat bg-center grid place-content-center">
       <div>
-        <h2 className="text-center text-9xl mb-7 text-white">MedBook</h2>
-        <div className="flex gap-4">
+        <h2 className="text-center text-6xl md:text-9xl mb-7 text-white">MedBook</h2>
+        <div className="flex gap-4 md:flex-row flex-col">
           <button
             type="button"
             className="btn btn-primary flex-1 text-2xl font-semibold"
