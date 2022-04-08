@@ -9,28 +9,19 @@ import DoctorCard from './DoctorCard';
 const Doctors = () => {
   const doctors = useSelector((state) => state.doctor);
   const dispatch = useDispatch();
-  const [steps, setSteps] = useState(3);
-  const viewPortWidth = window.innerWidth;
+  const resultsRender = [];
+  const isMobile = window.innerWidth < 768;
+
   useEffect(() => {
     dispatch(fetchD());
   }, [dispatch]);
 
-  useEffect(() => {
-    if (viewPortWidth < 768) {
-      setSteps(1);
-    } else if (viewPortWidth < 992) {
-      setSteps(2);
-    } else {
-      setSteps(3);
-    }
-  }, [viewPortWidth]);
-  const resultsRender = [];
-
   const modifyResults = () => {
+    const steps = isMobile ? 1 : 3;
     for (let i = 0; i < doctors.length; i += steps) {
       resultsRender.push(
         <div className={`carousel-item ${i === 0 ? 'active' : ''} relative float-left w-full `}>
-          <div className={`grid grid-cols-${steps} w-full`}>
+          <div className="grid grid-cols-1 md:grid-cols-3 w-full">
             {doctors.slice(i, i + steps).map((doctor) => (
               <DoctorCard doctor={doctor} key={doctor.id} />
             ))}
