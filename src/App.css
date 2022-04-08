@@ -6,6 +6,14 @@
   text-align: center;
 }
 
+.landing-page {
+  background-image: url('https://wallpaper.dog/large/5535079.jpg');
+}
+
+dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
 /* dark theme styles */
 
 .theme-transition {
@@ -22,6 +30,14 @@
 
 .nav-link {
   @apply uppercase tracking-wide text-gray-900 py-3 px-4 w-full inline-block text-sm font-semibold dark-theme-bg theme-transition;
+}
+
+.btn-primary {
+  @apply bg-primary hover:bg-lime-400;
+}
+
+.btn {
+  @apply p-4 rounded-full text-slate-50  capitalize;
 }
 
 .active {

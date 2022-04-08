@@ -10,7 +10,6 @@ const Input = ({
       name={name}
       placeholder={placeholder}
       value={value}
-      required
       className="input-field"
       onChange={handleChange}
     />
