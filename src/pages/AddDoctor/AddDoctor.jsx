@@ -91,8 +91,8 @@ const AddDoctor = () => {
   };
 
   return (
-    <section className="w-full flex justify-center items-center min-h-screen md:h-full bg-slate-200 dark:bg-slate-700">
-      <div className="w-5/6 md:w-2/5 h-full md:h-3/4 md:overflow-scroll py-4 px-6 bg-white border-2 border-t-darkContrast shadow-lg">
+    <section className="w-full flex justify-center items-center min-h-screen md:h-full bg-slate-200 dark:bg-slate-700 py-16 md:py-0">
+      <div className="w-5/6 md:w-2/5 h-full md:h-3/4 md:overflow-y-scroll py-4 px-6 bg-white border-2 border-t-darkContrast shadow-lg">
         <form
           onSubmit={handleSubmit}
           method="post"
