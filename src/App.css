@@ -8,6 +8,7 @@
 
 .landing-page {
   background-image: url('https://wallpaper.dog/large/5535079.jpg');
+  background-size: cover;
 }
 
 dialog::backdrop {
