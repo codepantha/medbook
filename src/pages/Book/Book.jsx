@@ -30,19 +30,31 @@ const Reserve = () => {
         className="flex flex-col gap-3 p-5"
         onSubmit={(e) => submitAppointmentToStore(e, dispatch, startDate.toISOString().split('T')[0])}
       >
-        <select
-          id="doctors"
-          className="border-solid border-2 p-3 rounded-full dark-theme-bg theme-transition dark:border-slate-600"
-        >
-          {doctors.map((doctor) => (
-            <option key={doctor.id} value={doctor.id}>
-              {doctor.specialty}
-              :
-              {' '}
-              {doctor.name}
-            </option>
-          ))}
-        </select>
+        <div className="relative">
+          <select
+            id="doctors"
+            className="border-solid border-2 p-3 rounded-full dark-theme-bg theme-transition dark:border-slate-600 appearance-none w-full"
+          >
+            {doctors.map((doctor) => (
+              <option key={doctor.id} value={doctor.id}>
+                {doctor.specialty}
+                :
+                {' '}
+                {doctor.name}
+              </option>
+            ))}
+          </select>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-6 w-6 absolute top-1/2 right-3 transform -translate-y-1/2 pointer-events-none"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            strokeWidth={2}
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+          </svg>
+        </div>
         <input
           type="text"
           id="city"
