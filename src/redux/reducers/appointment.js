@@ -6,7 +6,7 @@ import {
 } from '../actions/action';
 
 const initialState = {
-  appointments: [],
+  appointments: [{}],
   status: '',
 };
 
@@ -30,7 +30,6 @@ const appointmentReducer = (state = initialState, { type, payload }) => {
     case BOOK_NEW_APPOINTMENT:
       return {
         ...state,
-        appointments: [...state.appointments, payload],
         status: 'success',
       };
 

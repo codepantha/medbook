@@ -34,7 +34,7 @@ const Doctors = () => {
 
   return (
     <main className="grid content-center h-screen gap-14">
-      <div>
+      <div className="pt-10">
         <h1 className="text-center text-4xl md:text-6xl mb-4 font-bold">Doctors List</h1>
         <p className="text-center text-gray-400 font-bold text-md md:text-lg">
           Please select a doctor
