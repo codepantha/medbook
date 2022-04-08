@@ -13,29 +13,29 @@ function AppointmentCard({ appointment }) {
   };
 
   return (
-    <div>
-      <div className="grid grid-cols-3 gap-10">
-        <div className="rounded text-center max-w-sm overflow-hidden shadow-lg">
-          <h1>
-            Appointment date:
-            {appointment.appointment_date}
-          </h1>
-          <h1>
-            City:
-            {appointment.city}
-          </h1>
-          <div>{getDoctorName()}</div>
-          <div className="px-6 pt-4 pb-2">
-            <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2 cursor-pointer">
-              Cancel appointment
-            </span>
-            <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2 cursor-pointer">
-              Choose another date
-            </span>
-          </div>
+    <>
+      <div className="rounded text-center max-w-sm overflow-hidden shadow-lg">
+        <h1>
+          Appointment date:
+          {' '}
+          {appointment.appointment_date}
+        </h1>
+        <h1>
+          City:
+          {' '}
+          {appointment.city}
+        </h1>
+        <div>{`Doctor: ${getDoctorName()}`}</div>
+        <div className="px-6 pt-4 pb-2 flex flex-col">
+          <button type="button" className="bg-red-500 text-white hover:bg-red-700 rounded-full px-3 py-1 text-sm font-semibold mr-2 mb-2">
+            Cancel appointment
+          </button>
+          <button type="button" className="bg-primary hover:bg-lime-400 rounded-full px-3 py-1 text-sm font-semibold text-primaryContrast mr-2 mb-2">
+            Reschedule
+          </button>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 

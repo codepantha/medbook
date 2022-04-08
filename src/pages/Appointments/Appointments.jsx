@@ -19,15 +19,17 @@ const Appointment = () => {
 
   return (
     <>
-      <div className="appointment-wrapper">
-        <div className="appointment-title-holder">
+      <div className="appointment-wrapper py-16 md:py-0">
+        <div className="appointment-title-holder mb-10">
           <h1 className="text-center text-bold text-2xl font-bold m-5">
             List of my appointments:
           </h1>
         </div>
-        {appointments?.map((appointment) => (
-          <AppointmentCard key={appointment.id} appointment={appointment} />
-        ))}
+        <div className="grid md:grid-cols-3 gap-10">
+          {appointments?.map((appointment) => (
+            <AppointmentCard key={appointment.id} appointment={appointment} />
+          ))}
+        </div>
       </div>
     </>
   );
