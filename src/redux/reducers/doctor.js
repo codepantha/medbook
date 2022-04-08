@@ -5,7 +5,6 @@ const initialState = [];
 const doctorReducer = (state = initialState, { type, payload }) => {
   switch (type) {
     case FETCH_DOCTOR_SUCCESS:
-      // cacheDoctors = payload;
       return payload;
 
     case FETCH_DOCTOR_FAILURE:

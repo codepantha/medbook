@@ -94,3 +94,7 @@ dialog::backdrop {
 input {
   @apply dark:text-white dark:bg-slate-600;
 }
+
+.carousel-item.carousel-item {
+  @apply bg-inherit text-gray-700;
+}
