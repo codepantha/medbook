@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import DatePicker from 'react-datepicker';
 import { fetchD, addAppointment } from '../../redux/thunk/api';
@@ -10,19 +11,22 @@ const submitAppointmentToStore = (e, dispatch, userId, startDate) => {
     doctorId: parseInt(document.getElementById('doctors').value, 10),
     bookingDate: startDate,
     city: document.getElementById('city').value,
-    userId: userId,
+    userId,
   };
   dispatch(addAppointment(newAppointment));
 };
 
 const Reserve = () => {
   const doctors = useSelector((state) => state.doctor);
-  const { currentUser } = useSelector((state) => state.users)
+  const { currentUser } = useSelector((state) => state.users);
+  const status = useSelector((state) => state.appointments.status);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   useEffect(() => {
     dispatch(fetchD());
   }, [dispatch]);
   const [startDate, setStartDate] = useState(new Date());
+  if (status === 'success') navigate('/my-appointments');
 
   return (
     <main className="flex flex-col h-full justify-center items-center gap-10">

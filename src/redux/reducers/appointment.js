@@ -2,10 +2,12 @@ import {
   FETCH_APPOINTMENT_SUCCESS,
   FETCH_APPOINTMENT_FAILURE,
   BOOK_NEW_APPOINTMENT,
+  BOOK_NEW_APPOINTMENT_FAILURE,
 } from '../actions/action';
 
 const initialState = {
   appointments: [],
+  status: '',
 };
 
 const appointmentReducer = (state = initialState, { type, payload }) => {
@@ -19,10 +21,17 @@ const appointmentReducer = (state = initialState, { type, payload }) => {
         appointments: payload,
       };
 
+    case BOOK_NEW_APPOINTMENT_FAILURE:
+      return {
+        ...state,
+        status: 'failed',
+      };
+
     case BOOK_NEW_APPOINTMENT:
       return {
         ...state,
         appointments: [...state.appointments, payload],
+        status: 'success',
       };
 
     default:

@@ -6,6 +6,7 @@ import {
   fetchAppointmentFailure,
   fetchAppointmentSuccess,
   bookAppointment,
+  BOOK_NEW_APPOINTMENT_FAILURE,
 } from '../actions/action';
 
 const domain = 'https://medbookapi.herokuapp.com';
@@ -54,7 +55,7 @@ export const addAppointment = ({
         },
       )
       .then((response) => {
-        if (response.status === 'Success') {
+        if (response.data.status === 'Success') {
           dispatch(
             bookAppointment({
               doctorId,
@@ -62,6 +63,8 @@ export const addAppointment = ({
               city,
             }),
           );
+        } else {
+          dispatch({ type: BOOK_NEW_APPOINTMENT_FAILURE });
         }
       });
   };
