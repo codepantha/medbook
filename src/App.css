@@ -22,7 +22,7 @@ dialog::backdrop {
 }
 
 .dark-theme-bg {
-  @apply dark:bg-dark dark:text-darkContrast;
+  @apply dark:bg-slate-700 dark:text-darkContrast;
 }
 
 .nav-item {
