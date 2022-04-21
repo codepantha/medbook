@@ -5,11 +5,36 @@ import { FaTwitter, FaFacebookF, FaLinkedinIn } from 'react-icons/fa';
 import domain from '../../redux/thunk/api';
 
 const DoctorCard = ({ doctor }) => {
-  const [doctorPicture, setDoctorPicture] = useState('');
+  const doctorImagePlaceholder = 'https://previews.123rf.com/images/apoev/apoev1806/apoev180600053/103284652-.jpg?fj=1';
+  const [doctorPicture, setDoctorPicture] = useState(doctorImagePlaceholder);
+
+  const testImage = (url, timeout = 5000) => {
+    let timedOut = false;
+    let timer;
+    const img = new Image();
+
+    img.onabort = () => {
+      if (!timedOut) {
+        clearTimeout(timer);
+      }
+    };
+    img.onerror = img.onabort;
+    img.onload = () => {
+      if (!timedOut) {
+        clearTimeout(timer);
+        setDoctorPicture(url);
+      }
+    };
+    img.src = url;
+    timer = setTimeout(() => {
+      timedOut = true;
+    }, timeout);
+  };
+
   const fetchDoctorImage = async () => {
     const response = await fetch(`${domain}/api/v1/doctors/${doctor.id}/profile_pic`);
     const data = await response.json();
-    setDoctorPicture(data.profile_pic_url);
+    testImage(data.profile_pic_url);
   };
 
   useEffect(() => fetchDoctorImage(), []);
