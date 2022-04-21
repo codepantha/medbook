@@ -1,8 +1,8 @@
-/* eslint-disable no-unused-vars */
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 import 'tw-elements';
+import { useMediaQuery } from 'react-responsive';
 import { fetchD } from '../../redux/thunk/api';
 import DoctorCard from './DoctorCard';
 
@@ -10,7 +10,7 @@ const Doctors = () => {
   const doctors = useSelector((state) => state.doctor);
   const dispatch = useDispatch();
   const resultsRender = [];
-  const isMobile = window.innerWidth < 768;
+  const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
 
   useEffect(() => {
     dispatch(fetchD());
