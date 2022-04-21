@@ -31,7 +31,7 @@ const DetailPage = ({
           <img
             src={image}
             alt={name}
-            className="rounded-3xl border-4 border-zinc-600 dark:border-neutral-300"
+            className="rounded-3xl border-4 border-zinc-600 dark:border-neutral-300 h-64 w-64 md:w-96 md:h-96 mx-auto md:mx-0"
           />
         </div>
         <aside className="md:w-3/12 flex flex-col gap-y-5">
